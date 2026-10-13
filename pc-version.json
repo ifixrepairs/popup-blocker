@@ -1,7 +1,7 @@
 {
-  "version": "10.3",
-  "url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/pc/AdTrapper-PC-v10.3.pyw",
-  "sha256": "68866b81c5f9e7eeee8ea02ea20e0a717fc4706c61a1cc5856ec265c37d5dc3c",
-  "size": 583298,
-  "notes": "Easier reading: the small print under each app (package name and the why-flagged reasons) is now bigger and much darker, titles and REMOVE/REVIEW badges bumped up a size too. Numbered rows from 10.2 unchanged."
+  "version": "10.4",
+  "url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/pc/AdTrapper-PC-v10.4.pyw",
+  "sha256": "88359775e12369f0ed4436b455b069e20592476baea766e3d82c5c467496dd93",
+  "size": 589606,
+  "notes": "NEW: GUIDED CLEAN button - the beginner mode. It sorts the scan into three piles in plain words (junk to remove / your stuff, kept / not sure, left alone), removes only the junk, then re-scans and calls the phone CLEAN only at zero. SAFETY: famous apps (Facebook etc.) and Google/Samsung system pieces can never land in the junk pile, and their rows now start UNCHECKED - a stray REMOVE ALL can't take them."
 }
