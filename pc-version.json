@@ -1,0 +1,7 @@
+{
+  "version": "10.1",
+  "url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/pc/AdTrapper-PC-v10.1.pyw",
+  "sha256": "4e0ef5454939f8fe770c9ef2e944ff50ef87a87ae08cfcc5bc58a9fe1d956bff",
+  "size": 583067,
+  "notes": "Smaller, centered window; new CHECK FOR UPDATES button - PC updates are one-click from now on; threat list refreshed to the live 125; shop-history flags on Samsung/Google system apps now show as REVIEW instead of REMOVE."
+}
