@@ -1,7 +1,7 @@
 {
-  "version": "10.1",
-  "url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/pc/AdTrapper-PC-v10.1.pyw",
-  "sha256": "4e0ef5454939f8fe770c9ef2e944ff50ef87a87ae08cfcc5bc58a9fe1d956bff",
-  "size": 583067,
-  "notes": "Smaller, centered window; new CHECK FOR UPDATES button - PC updates are one-click from now on; threat list refreshed to the live 125; shop-history flags on Samsung/Google system apps now show as REVIEW instead of REMOVE."
+  "version": "10.2",
+  "url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/pc/AdTrapper-PC-v10.2.pyw",
+  "sha256": "10023f4ad76217ff6cbb12cbb9c62faa628becc8695bf3fca6e6441f61c735e6",
+  "size": 583295,
+  "notes": "Every row in the scan list now carries a NUMBER (1, 2, 3...) in the same order as the list itself, so the list Sneeze reads you matches the numbers on your screen."
 }
