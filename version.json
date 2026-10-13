@@ -1,0 +1,6 @@
+{
+  "versionCode": 2002,
+  "versionName": "1.0.1",
+  "apkUrl": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/AdTrapper.apk",
+  "notes": "Better detection: catches cleaner apps like MiraClean and Quick Clean Plus, and launchers that take over your home screen (like Easy Mail). Threat list expanded to 93 known junk apps. AdTrapper can now update itself from inside the app."
+}
