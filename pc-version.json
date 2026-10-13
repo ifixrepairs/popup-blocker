@@ -1,7 +1,7 @@
 {
-  "version": "10.2",
-  "url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/pc/AdTrapper-PC-v10.2.pyw",
-  "sha256": "10023f4ad76217ff6cbb12cbb9c62faa628becc8695bf3fca6e6441f61c735e6",
-  "size": 583295,
-  "notes": "Every row in the scan list now carries a NUMBER (1, 2, 3...) in the same order as the list itself, so the list Sneeze reads you matches the numbers on your screen."
+  "version": "10.3",
+  "url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/pc/AdTrapper-PC-v10.3.pyw",
+  "sha256": "68866b81c5f9e7eeee8ea02ea20e0a717fc4706c61a1cc5856ec265c37d5dc3c",
+  "size": 583298,
+  "notes": "Easier reading: the small print under each app (package name and the why-flagged reasons) is now bigger and much darker, titles and REMOVE/REVIEW badges bumped up a size too. Numbered rows from 10.2 unchanged."
 }
