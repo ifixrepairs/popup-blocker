@@ -1,7 +1,7 @@
 {
-  "version": "10.8",
-  "url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/pc/AdTrapper-PC-v10.8.pyw",
-  "sha256": "0d75a5c94c59aa645a044b3ff7524cdd107785603a30e623ec07d64dc58b6b25",
-  "size": 597175,
-  "notes": "Guided Clean guide colors moved into the TEXT (owner correction to v10.7): the number + app name are written in RED = remove, GREEN = keep, YELLOW = not sure/ask first, on the original background — no color blocks. Scan numbers (issue #46) and full no-truncation listing unchanged."
+  "version": "10.9",
+  "url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/pc/AdTrapper-PC-v10.9.pyw",
+  "sha256": "98466cb3e1d5d9f7d43ba0d29542a5a16e146224b2e911222e4257af1e5e85b4",
+  "size": 605616,
+  "notes": "Owner layout fix: the banner is now a slim strip and the results list is big (half the screen) so apps are readable without scrolling. Cleanup report redo: the program asks for the customer name + ticket number and prints both on the PHONE CLEANUP REPORT with a certification line for the bank; report file is named cleanup-report-<ticket>.pdf; long app names wrap instead of cutting off; PRINT on a phone that scanned CLEAN now makes the bank-proof inspection report."
 }
