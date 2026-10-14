@@ -1,7 +1,7 @@
 {
-  "version": "10.10",
-  "url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/pc/AdTrapper-PC-v10.10.pyw",
-  "sha256": "54b0159ee4d24efc6b42ab5f678a96d9ed91eb31bf70d02eb5c5b9042cd4bde5",
-  "size": 605618,
-  "notes": "Bigger writing in the results list: app names, problem lines, numbers and REMOVE/REVIEW tags all enlarged and rows spaced out, so the list reads easy at the counter."
+  "version": "10.11",
+  "url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/pc/AdTrapper-PC-v10.11.pyw",
+  "sha256": "31ba7d36fc00d87afe51df8c56647e6517a771c2e27c33a3636ccb5f61ba784b",
+  "size": 608722,
+  "notes": "Bank edition of the cleanup report: its own remote-access / screen-sharing line, a privacy line, a scope line, the inspection time, the live threat count, and the technician's name printed on the report (new field in the report dialog)."
 }
