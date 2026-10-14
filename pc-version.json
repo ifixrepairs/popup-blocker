@@ -1,7 +1,7 @@
 {
-  "version": "10.6",
-  "url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/pc/AdTrapper-PC-v10.6.pyw",
-  "sha256": "e160895cf7a1e0cd0f8c91ed7816a784ce58670237198b402fbdfc9bdf6643fd",
-  "size": 591600,
-  "notes": "Guided Clean now prints every app with its scan number from the main list (issue #46): the guide, the list and rulings all use the same numbers. Everything else from 10.5 unchanged."
+  "version": "10.7",
+  "url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/pc/AdTrapper-PC-v10.7.pyw",
+  "sha256": "68eeb1552c98491b63f42f3b808c9ae1d9c5a67c7616f564cafc09a55f7d8fd7",
+  "size": 597205,
+  "notes": "Guided Clean guide is now COLOR (issue #49): every line banded RED = remove, GREEN = keep, YELLOW = not sure, ask first — with its scan number (issue #46) — and the guide lists every flagged app, no more '+ N more'. Everything else from 10.6 unchanged."
 }
