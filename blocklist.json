@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-13",
+  "updated": "2026-10-14",
   "packages": [
     "antivirus.anti.virus.applock.protection.vpn",
     "antivirus.virus.cleaner.clean.vpn.booster",
@@ -125,6 +125,17 @@
     "picturetranslate.extractor.text.lite",
     "vault.gallery.lock",
     "ws.clockthevault",
-    "xboxgame.abdul2"
+    "xboxgame.abdul2",
+    "com.espublishing.pdfreader.viewer.editor",
+    "com.freereels.app",
+    "com.junk.file.sweeper",
+    "com.pdfdocs.reader.allinone",
+    "com.photo.recovery.file.rescue.restore",
+    "com.przlaegsm.browser",
+    "com.changdu.mobovideo",
+    "com.location.gps.tracker",
+    "com.maps.voice.navigation.traffic.gps.location.route.driving.directions",
+    "com.shdj.test",
+    "com.v.pushort"
   ]
 }
