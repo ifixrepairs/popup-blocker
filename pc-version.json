@@ -1,7 +1,7 @@
 {
-  "version": "10.5",
-  "url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/pc/AdTrapper-PC-v10.5.pyw",
-  "sha256": "0ec9c0e5a25f61a4cd45c3b545c0872662fe88ea958fa71f22fb4335f6dc7475",
-  "size": 590830,
-  "notes": "Shortcut fix: the program now keeps a copy named AdTrapper-PC.pyw (no version number) next to itself, refreshed on every start - point the desktop shortcut at THAT name once and updates will never break it again. Guided Clean and everything from 10.4 unchanged."
+  "version": "10.6",
+  "url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/pc/AdTrapper-PC-v10.6.pyw",
+  "sha256": "e160895cf7a1e0cd0f8c91ed7816a784ce58670237198b402fbdfc9bdf6643fd",
+  "size": 591600,
+  "notes": "Guided Clean now prints every app with its scan number from the main list (issue #46): the guide, the list and rulings all use the same numbers. Everything else from 10.5 unchanged."
 }
