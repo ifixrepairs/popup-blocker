@@ -1,7 +1,7 @@
 {
-  "version": "10.7",
-  "url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/pc/AdTrapper-PC-v10.7.pyw",
-  "sha256": "68eeb1552c98491b63f42f3b808c9ae1d9c5a67c7616f564cafc09a55f7d8fd7",
-  "size": 597205,
-  "notes": "Guided Clean guide is now COLOR (issue #49): every line banded RED = remove, GREEN = keep, YELLOW = not sure, ask first — with its scan number (issue #46) — and the guide lists every flagged app, no more '+ N more'. Everything else from 10.6 unchanged."
+  "version": "10.8",
+  "url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/pc/AdTrapper-PC-v10.8.pyw",
+  "sha256": "0d75a5c94c59aa645a044b3ff7524cdd107785603a30e623ec07d64dc58b6b25",
+  "size": 597175,
+  "notes": "Guided Clean guide colors moved into the TEXT (owner correction to v10.7): the number + app name are written in RED = remove, GREEN = keep, YELLOW = not sure/ask first, on the original background — no color blocks. Scan numbers (issue #46) and full no-truncation listing unchanged."
 }
