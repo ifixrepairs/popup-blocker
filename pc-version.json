@@ -1,7 +1,7 @@
 {
-  "version": "10.11",
-  "url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/pc/AdTrapper-PC-v10.11.pyw",
-  "sha256": "31ba7d36fc00d87afe51df8c56647e6517a771c2e27c33a3636ccb5f61ba784b",
-  "size": 608722,
-  "notes": "Bank edition of the cleanup report: its own remote-access / screen-sharing line, a privacy line, a scope line, the inspection time, the live threat count, and the technician's name printed on the report (new field in the report dialog)."
+  "version": "10.12",
+  "url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/pc/AdTrapper-PC-v10.12.pyw",
+  "sha256": "7dc99be35f9687aa5788301472b53e2979ec4ffb1415b87e0cd4b513a91c4de3",
+  "size": 626414,
+  "notes": "Pictures: the results list now shows each scanned app real icon, pulled from the phone during the scan (cached per app so repeat scans stay fast). Nothing else changed."
 }
