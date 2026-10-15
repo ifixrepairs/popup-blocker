@@ -1,7 +1,1 @@
-{
-  "version": "10.12",
-  "url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/pc/AdTrapper-PC-v10.12.pyw",
-  "sha256": "7dc99be35f9687aa5788301472b53e2979ec4ffb1415b87e0cd4b513a91c4de3",
-  "size": 626414,
-  "notes": "Pictures: the results list now shows each scanned app real icon, pulled from the phone during the scan (cached per app so repeat scans stay fast). Nothing else changed."
-}
+{"notes":"Boom text: the damning phrases inside each reason now shout in bold hot color (red on remove rows, amber on review rows); the rest of the reason stays quiet. Report fix: printing works after a clean when only reviewed-and-kept apps remain, the kept apps are listed on the report as reviewed and kept, blank report details no longer kill the report, and a built-in backup PDF writer means a report always comes out. New Bad list view: every convicted app in order with its real store picture, or the REMOVED FROM PLAY STORE badge for the ones the store threw out. Guided Clean now shows each app real picture too.","sha256":"ecb0a86aac2971c208a16251e1a104942ad5c00a33e1da4f2fb886109169d547","size":658773,"url":"https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/pc/AdTrapper-PC-v10.13.pyw","version":"10.13"}
