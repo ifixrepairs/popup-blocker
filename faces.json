@@ -1,0 +1,1567 @@
+{
+  "updated": "2026-10-15",
+  "faces": [
+    {
+      "package": "antivirus.anti.virus.applock.protection.vpn",
+      "name": "Antivirus Virus cleaner + VPN",
+      "icon": "faces/antivirus.anti.virus.applock.protection.vpn.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=antivirus.anti.virus.applock.protection.vpn&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "antivirus.virus.cleaner.clean.vpn.booster",
+      "name": "Cleaner Antivirus VPN Cleaner",
+      "icon": "faces/antivirus.virus.cleaner.clean.vpn.booster.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=antivirus.virus.cleaner.clean.vpn.booster&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "app.luckymoneygames",
+      "name": "Scratch & Win Real Money Games",
+      "icon": "faces/app.luckymoneygames.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=app.luckymoneygames&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "appicon.diy.tools.prop",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=appicon.diy.tools.prop&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "call.recorder.automatic.acr",
+      "name": "Call Recorder - Auto Recording",
+      "icon": "faces/call.recorder.automatic.acr.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=call.recorder.automatic.acr&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "casinoplus.pindo3",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=casinoplus.pindo3&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "cleaner.clean.booster",
+      "name": "Cleaner - Clean Phone",
+      "icon": "faces/cleaner.clean.booster.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=cleaner.clean.booster&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "cn.junk.clean.plp",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=cn.junk.clean.plp&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "com.MoneyBingo.LuckyRewards.CashGame.BigWinner",
+      "name": "Money Bingo-Huge Real Cash Out",
+      "icon": "faces/com.MoneyBingo.LuckyRewards.CashGame.BigWinner.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=com.MoneyBingo.LuckyRewards.CashGame.BigWinner&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "com.Solitaire.Card.MoneyGame.CashRewards",
+      "name": "Solitaire Real Money-Win Money",
+      "icon": "faces/com.Solitaire.Card.MoneyGame.CashRewards.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=com.Solitaire.Card.MoneyGame.CashRewards&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "com.againstvirus.flux",
+      "name": "Antivirus Flux",
+      "icon": "faces/com.againstvirus.flux.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=com.againstvirus.flux&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "com.androidneonkeyboard.app",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=com.androidneonkeyboard.app&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "com.anti.virus.security",
+      "name": "Super Antivirus - Clean Virus",
+      "icon": "faces/com.anti.virus.security.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=com.anti.virus.security&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "com.antivi.shield.loish",
+      "name": "Antivirus Shield & Cleaner",
+      "icon": "faces/com.antivi.shield.loish.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=com.antivi.shield.loish&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "com.antivirus.cleaner.supersecurity",
+      "name": "Super Security",
+      "icon": "faces/com.antivirus.cleaner.supersecurity.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=com.antivirus.cleaner.supersecurity&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "com.applabstudios.ai.mail.homescreen.inbox",
+      "name": "Easy Mail - Email Launcher",
+      "icon": "faces/com.applabstudios.ai.mail.homescreen.inbox.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=com.applabstudios.ai.mail.homescreen.inbox&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "com.arcfolio.pdf.mrrmfo",
+      "name": "Arcfolio PDF",
+      "icon": "faces/com.arcfolio.pdf.mrrmfo.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=com.arcfolio.pdf.mrrmfo&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "com.aviator.aviatorgamejamantech2",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=com.aviator.aviatorgamejamantech2&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "com.bat.batsaver",
+      "name": "Battery Health & Life Checker",
+      "icon": "faces/com.bat.batsaver.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=com.bat.batsaver&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "com.benjaminone.client",
+      "name": "Benjamin - Earn Cash Rewards",
+      "icon": "faces/com.benjaminone.client.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=com.benjaminone.client&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "com.bingo.games.bingo.offline.win.cash",
+      "name": "Bingo Win Cash\u2122",
+      "icon": "faces/com.bingo.games.bingo.offline.win.cash.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=com.bingo.games.bingo.offline.win.cash&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "com.blue.deep.cleaner",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=com.blue.deep.cleaner&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "com.boost.clean",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=com.boost.clean&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "com.burakgon.gamebooster3",
+      "name": "Richie Games - Play & Earn",
+      "icon": "faces/com.burakgon.gamebooster3.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=com.burakgon.gamebooster3&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "com.cachecleanereasytool.app",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=com.cachecleanereasytool.app&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "com.caller.theme.slow",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=com.caller.theme.slow&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "com.callercallwallpaper.app",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=com.callercallwallpaper.app&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "com.callertheme.firstref",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=com.callertheme.firstref&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "com.capcut.capvideoeditorapp58",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=com.capcut.capvideoeditorapp58&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "com.changdu.mobovideo",
+      "name": "MoboReels: Good Reel Short TV",
+      "icon": "faces/com.changdu.mobovideo.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=com.changdu.mobovideo&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "com.chorefocus.app",
+      "name": "Chore Focus: ADHD Task Manager",
+      "icon": "faces/com.chorefocus.app.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=com.chorefocus.app&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "com.clea.mas.pro",
+      "name": "CleanMas",
+      "icon": "faces/com.clea.mas.pro.jpg",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=com.clea.mas.pro&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "com.clean.maestro.security.speed.booster",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=com.clean.maestro.security.speed.booster&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "com.clean.mix.junk",
+      "name": "Mix Cleaner",
+      "icon": "faces/com.clean.mix.junk.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=com.clean.mix.junk&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "com.cleaner.phone.junk.files",
+      "name": "Phone Cleaner - Clear Junk",
+      "icon": "faces/com.cleaner.phone.junk.files.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=com.cleaner.phone.junk.files&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "com.dl.guard.lock",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=com.dl.guard.lock&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "com.dmstudio.weather",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=com.dmstudio.weather&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "com.document.pdf.viewer",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=com.document.pdf.viewer&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "com.dreamcups.voicerecorder",
+      "name": "Voice Recorder",
+      "icon": "faces/com.dreamcups.voicerecorder.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=com.dreamcups.voicerecorder&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "com.easy.clean.ipz",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=com.easy.clean.ipz&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "com.espublishing.pdfreader.viewer.editor",
+      "name": "PDF Reader: View All PDFs",
+      "icon": "faces/com.espublishing.pdfreader.viewer.editor.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=com.espublishing.pdfreader.viewer.editor&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "com.fancyanimatedbattery.app",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=com.fancyanimatedbattery.app&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "com.fastcleanercashecleaner.app",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=com.fastcleanercashecleaner.app&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "com.fingertip.clean.cvb",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=com.fingertip.clean.cvb&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "com.flash.booster.Cleaner",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=com.flash.booster.Cleaner&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "com.flintos.capcut2",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=com.flintos.capcut2&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "com.freereels.app",
+      "name": "FreeReels - Dramas & Reels",
+      "icon": "faces/com.freereels.app.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=com.freereels.app&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "com.funnycallercustomtheme.app",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=com.funnycallercustomtheme.app&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "com.funnywallpapaerslive.app",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=com.funnywallpapaerslive.app&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "com.g19mobile.gamebooster",
+      "name": "Game Mode: Launcher & HUD",
+      "icon": "faces/com.g19mobile.gamebooster.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=com.g19mobile.gamebooster&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "com.godwin.applehealth2",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=com.godwin.applehealth2&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "com.godwin.applepay3",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=com.godwin.applepay3&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "com.grouprx.pureanti",
+      "name": "Antivirus Pure",
+      "icon": "faces/com.grouprx.pureanti.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=com.grouprx.pureanti&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "com.hello.miheapp.secretspace",
+      "name": "Game Space\u2013secret app hider",
+      "icon": "faces/com.hello.miheapp.secretspace.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=com.hello.miheapp.secretspace&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "com.hld.anzenbokusucal",
+      "name": "Calculator - photo vault",
+      "icon": "faces/com.hld.anzenbokusucal.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=com.hld.anzenbokusucal&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "com.inmobi.weather",
+      "name": "Weather",
+      "icon": "faces/com.inmobi.weather.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=com.inmobi.weather&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "com.intelli.clean",
+      "name": "IntelliClean Launcher",
+      "icon": "faces/com.intelli.clean.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=com.intelli.clean&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "com.intelligent.heimlich.tool",
+      "name": "MiraClean Lite - File Cleaner",
+      "icon": "faces/com.intelligent.heimlich.tool.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=com.intelligent.heimlich.tool&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "com.junk.file.sweeper",
+      "name": "Junk File Sweeper",
+      "icon": "faces/com.junk.file.sweeper.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=com.junk.file.sweeper&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "com.junkeraser.clean",
+      "name": "Junk Eraser - Storage Manager",
+      "icon": "faces/com.junkeraser.clean.jpg",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=com.junkeraser.clean&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "com.keli.imessage3",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=com.keli.imessage3&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "com.keli.siriapp1",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=com.keli.siriapp1&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "com.lagofast.mobile.acclerater",
+      "name": "LagoFast Game Booster: Low Lag",
+      "icon": "faces/com.lagofast.mobile.acclerater.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=com.lagofast.mobile.acclerater&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "com.learned.guard.jildo",
+      "name": "MiraClean - File Manager",
+      "icon": "faces/com.learned.guard.jildo.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=com.learned.guard.jildo&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "com.lionmobi.powerclean",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=com.lionmobi.powerclean&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "com.location.gps.tracker",
+      "name": "GPS Tracker & Location Tracker",
+      "icon": "faces/com.location.gps.tracker.jpg",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=com.location.gps.tracker&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "com.m24apps.acr",
+      "name": "Call Recorder - Auto Recording",
+      "icon": "faces/com.m24apps.acr.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=com.m24apps.acr&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "com.maps.voice.navigation.traffic.gps.location.route.driving.directions",
+      "name": "GPS, Maps, Driving Directions",
+      "icon": "faces/com.maps.voice.navigation.traffic.gps.location.route.driving.directions.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=com.maps.voice.navigation.traffic.gps.location.route.driving.directions&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "com.mbkristine8.cleanmaster",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=com.mbkristine8.cleanmaster&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "com.mhd.zelleapp2",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=com.mhd.zelleapp2&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "com.mobile.applock.en",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=com.mobile.applock.en&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "com.mobile.applock.wt",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=com.mobile.applock.wt&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "com.mycallcallpersonalization.app",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=com.mycallcallpersonalization.app&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "com.mycallcustomcallscrean.app",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=com.mycallcustomcallscrean.app&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "com.neonthemekeyboard.app",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=com.neonthemekeyboard.app&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "com.newscrean4dwallpapers.app",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=com.newscrean4dwallpapers.app&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "com.notesreminderslists.app",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=com.notesreminderslists.app&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "com.novabrain.tool.cleanboost",
+      "name": "CleanBoost - Junk Cleaner",
+      "icon": "faces/com.novabrain.tool.cleanboost.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=com.novabrain.tool.cleanboost&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "com.papaya.bingocash.play",
+      "name": "Bingo Cash",
+      "icon": "faces/com.papaya.bingocash.play.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=com.papaya.bingocash.play&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "com.papaya.solitairecash.play",
+      "name": "Solitaire Cash",
+      "icon": "faces/com.papaya.solitairecash.play.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=com.papaya.solitairecash.play&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "com.paypal.wallawalled11",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=com.paypal.wallawalled11&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "com.pdfdocs.reader.allinone",
+      "name": "All-in-One PDF & Docs Reader",
+      "icon": "faces/com.pdfdocs.reader.allinone.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=com.pdfdocs.reader.allinone&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "com.pdfsprint.viewer.vertigerdig",
+      "name": "PDF Sprint",
+      "icon": "faces/com.pdfsprint.viewer.vertigerdig.jpg",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=com.pdfsprint.viewer.vertigerdig&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "com.phcleanquickly.cleanplus",
+      "name": "Quick Clean Plus",
+      "icon": "faces/com.phcleanquickly.cleanplus.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=com.phcleanquickly.cleanplus&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "com.phone.junk.cleaner.appszone",
+      "name": "Phone \u2013 Junk Cleaner",
+      "icon": "faces/com.phone.junk.cleaner.appszone.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=com.phone.junk.cleaner.appszone&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null,
+      "apk_icon_dims": [
+        192,
+        192
+      ],
+      "ahash_distance": 56,
+      "match": true
+    },
+    {
+      "package": "com.photo.recovery.file.rescue.restore",
+      "name": "Photo Recovery",
+      "icon": "faces/com.photo.recovery.file.rescue.restore.jpg",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=com.photo.recovery.file.rescue.restore&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "com.planb.cleaner",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=com.planb.cleaner&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "com.power.doctor.mnb",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=com.power.doctor.mnb&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "com.premkumar.zelleapp2",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=com.premkumar.zelleapp2&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "com.premkumar.zelleapp5",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=com.premkumar.zelleapp5&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "com.procleaner.clean",
+      "name": "ProCleaner - Storage Cleaner",
+      "icon": "faces/com.procleaner.clean.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=com.procleaner.clean&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "com.przlaegsm.browser",
+      "name": "Prism: AI Quick Path Browser",
+      "icon": "faces/com.przlaegsm.browser.jpg",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=com.przlaegsm.browser&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "com.react.fallguysgame1",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=com.react.fallguysgame1&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "com.react.gta6game1",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=com.react.gta6game1&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "com.rockskinthemes.app",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=com.rockskinthemes.app&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "com.sas.virus.cleaner.antivirus.unusedapps",
+      "name": "Antivirus: Junk Cleaner, Virus",
+      "icon": "faces/com.sas.virus.cleaner.antivirus.unusedapps.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=com.sas.virus.cleaner.antivirus.unusedapps&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "com.sec.reclean",
+      "name": "SecureClean \u2014 Phone Cleaner",
+      "icon": "faces/com.sec.reclean.jpg",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=com.sec.reclean&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "com.second.space",
+      "name": "Second Space: Launcher",
+      "icon": "faces/com.second.space.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=com.second.space&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "com.shahdi.imessage2",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=com.shahdi.imessage2&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "com.shahdi.siri1",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=com.shahdi.siri1&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "com.shahdi.siri2",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=com.shahdi.siri2&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "com.shdj.test",
+      "name": "StardustTV - Movies & Dramas",
+      "icon": "faces/com.shdj.test.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=com.shdj.test&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "com.sitaram.robloxgame1",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=com.sitaram.robloxgame1&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "com.sitaram.robloxgame3",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=com.sitaram.robloxgame3&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "com.smartnettools.studio.easyclean",
+      "name": "EasyClean - Junk Cleaner",
+      "icon": "faces/com.smartnettools.studio.easyclean.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=com.smartnettools.studio.easyclean&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "com.sp.protector.free",
+      "name": "AppLock - Fingerprint",
+      "icon": "faces/com.sp.protector.free.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=com.sp.protector.free&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "com.spaceclean.quickcleaner",
+      "name": "Quick Clean - Space Cleaner",
+      "icon": "faces/com.spaceclean.quickcleaner.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=com.spaceclean.quickcleaner&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "com.sr.clear2.jb",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=com.sr.clear2.jb&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "com.stg.plus.win.real.money.cash.app",
+      "name": "Win real money: cash app games",
+      "icon": "faces/com.stg.plus.win.real.money.cash.app.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=com.stg.plus.win.real.money.cash.app&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "com.storage.androidcleaner",
+      "name": "Cleanup: Phone Storage Cleaner",
+      "icon": "faces/com.storage.androidcleaner.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=com.storage.androidcleaner&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "com.super.clean.zaz",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=com.super.clean.zaz&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "com.techosteg.recovery",
+      "name": "Photo Recover - File & Video",
+      "icon": "faces/com.techosteg.recovery.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=com.techosteg.recovery&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "com.tf.phonecleaner.booster",
+      "name": "Phone Cleaner - Junk Cleaner",
+      "icon": "faces/com.tf.phonecleaner.booster.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=com.tf.phonecleaner.booster&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "com.trpz.travel",
+      "name": "Match to Win: Real Cash Prizes",
+      "icon": "faces/com.trpz.travel.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=com.trpz.travel&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "com.ultimate.cleanerpro.ucp",
+      "name": "Ultimate Cleaner Pro",
+      "icon": "faces/com.ultimate.cleanerpro.ucp.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=com.ultimate.cleanerpro.ucp&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "com.v.pushort",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=com.v.pushort&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "com.westhorizont.appsforge.filehorizon_explorereaddocuments",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=com.westhorizont.appsforge.filehorizon_explorereaddocuments&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "com.winde.apex",
+      "name": "Apex Clean: Security AntiVirus",
+      "icon": "faces/com.winde.apex.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=com.winde.apex&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "com.winrgames.solitaire",
+      "name": "Solitaire - Make Money",
+      "icon": "faces/com.winrgames.solitaire.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=com.winrgames.solitaire&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "com.works.amazing.colour",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=com.works.amazing.colour&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "com.zelleapp.devnexus2",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=com.zelleapp.devnexus2&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "de.andromo.ssfiftylivesixcc",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=de.andromo.ssfiftylivesixcc&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "de.fiftyninecamera.rollredactor",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=de.fiftyninecamera.rollredactor&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "de.hitopgop.sixtyeightgx",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=de.hitopgop.sixtyeightgx&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "de.instgang.fiftyggfife",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=de.instgang.fiftyggfife&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "de.nineergysh.quickarttwo",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=de.nineergysh.quickarttwo&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "de.photoground.twentysixshot",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=de.photoground.twentysixshot&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "de.sixtyonecollice.cameraroll",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=de.sixtyonecollice.cameraroll&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "de.stockeighty.onewallpapers",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=de.stockeighty.onewallpapers&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "de.xnano.photoexifeditornine",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=de.xnano.photoexifeditornine&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "gb.artfilter.tenvarnist",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=gb.artfilter.tenvarnist&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "gb.crazykey.sevenboard",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=gb.crazykey.sevenboard&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "gb.painnt.moonlightingnine",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=gb.painnt.moonlightingnine&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "gb.twentynine.redaktoridea",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=gb.twentynine.redaktoridea&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "helectronsoft.com.grubl.live.wallpapers3d",
+      "name": "GRUBL\u2122 4D Live Wallpapers + AI",
+      "icon": "faces/helectronsoft.com.grubl.live.wallpapers3d.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=helectronsoft.com.grubl.live.wallpapers3d&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "huwaei.health1",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=huwaei.health1&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "il.co.smedia.callrecorder.yoni",
+      "name": "Call Recorder Automatic",
+      "icon": "faces/il.co.smedia.callrecorder.yoni.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=il.co.smedia.callrecorder.yoni&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "in.memory.sys.clean",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=in.memory.sys.clean&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "in.phone.clean.www",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=in.phone.clean.www&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "live.weather.vitality.studio.forecast.widget",
+      "name": "Local Weather Alerts - Widget",
+      "icon": "faces/live.weather.vitality.studio.forecast.widget.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=live.weather.vitality.studio.forecast.widget&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "mtr.cpumonitor.temperature",
+      "name": "Battery Doctor, Battery Life",
+      "icon": "faces/mtr.cpumonitor.temperature.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=mtr.cpumonitor.temperature&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "myfiles.filemanager.fileexplorer.cleaner",
+      "name": "Phone Cleaner - AI Cleaner",
+      "icon": "faces/myfiles.filemanager.fileexplorer.cleaner.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=myfiles.filemanager.fileexplorer.cleaner&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "netflixgamecontroller.uzair1",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=netflixgamecontroller.uzair1&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "netflixgamecontroller.uzair2",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=netflixgamecontroller.uzair2&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "og.crp.cln.zda",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=og.crp.cln.zda&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "org.clean.sys.lunch",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=org.clean.sys.lunch&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "org.qck.cle.oyo",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=org.qck.cle.oyo&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "org.ssl.wind.clean",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=org.ssl.wind.clean&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "org.stemp.fll.clean",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=org.stemp.fll.clean&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "picturetranslate.extractor.text.lite",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=picturetranslate.extractor.text.lite&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "smarttool.phonecleaner.phoneoptimizer",
+      "name": "Smart Clean: Delete Junk Files",
+      "icon": "faces/smarttool.phonecleaner.phoneoptimizer.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=smarttool.phonecleaner.phoneoptimizer&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null,
+      "apk_icon_dims": [
+        192,
+        192
+      ],
+      "ahash_distance": 0,
+      "match": true
+    },
+    {
+      "package": "syn.clean.cool.zbc",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=syn.clean.cool.zbc&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    },
+    {
+      "package": "vault.gallery.lock",
+      "name": "Photo Lock App - Hide Pictures",
+      "icon": "faces/vault.gallery.lock.png",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=vault.gallery.lock&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "ws.clockthevault",
+      "name": "Clock Vault-Hide Photos,Videos",
+      "icon": "faces/ws.clockthevault.jpg",
+      "status": "found",
+      "source": "https://play.google.com/store/apps/details?id=ws.clockthevault&hl=en_US&gl=US",
+      "width": 512,
+      "height": 512,
+      "reason": null
+    },
+    {
+      "package": "xboxgame.abdul2",
+      "name": null,
+      "icon": null,
+      "status": "not_found",
+      "source": "https://play.google.com/store/apps/details?id=xboxgame.abdul2&hl=en_US&gl=US",
+      "width": null,
+      "height": null,
+      "reason": "HTTP 404 (delisted)"
+    }
+  ]
+}
