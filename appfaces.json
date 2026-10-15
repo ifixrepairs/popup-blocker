@@ -1,0 +1,667 @@
+{
+ "updated": "2026-10-15",
+ "faces": [
+  {
+   "package": "com.openai.chatgpt",
+   "name": "ChatGPT",
+   "icon": "appfaces/com.openai.chatgpt.png",
+   "status": "found",
+   "source": "https://play.google.com/store/apps/details?id=com.openai.chatgpt&hl=en_US&gl=US",
+   "width": 512,
+   "height": 512,
+   "reason": null
+  },
+  {
+   "package": "com.spotify.music",
+   "name": "Spotify: Music and Podcasts",
+   "icon": "appfaces/com.spotify.music.png",
+   "status": "found",
+   "source": "https://play.google.com/store/apps/details?id=com.spotify.music&hl=en_US&gl=US",
+   "width": 512,
+   "height": 512,
+   "reason": null
+  },
+  {
+   "package": "com.whatsapp",
+   "name": "WhatsApp Messenger",
+   "icon": "appfaces/com.whatsapp.png",
+   "status": "found",
+   "source": "https://play.google.com/store/apps/details?id=com.whatsapp&hl=en_US&gl=US",
+   "width": 512,
+   "height": 512,
+   "reason": null
+  },
+  {
+   "package": "com.whatsapp.w4b",
+   "name": "WhatsApp Business",
+   "icon": "appfaces/com.whatsapp.w4b.png",
+   "status": "found",
+   "source": "https://play.google.com/store/apps/details?id=com.whatsapp.w4b&hl=en_US&gl=US",
+   "width": 512,
+   "height": 512,
+   "reason": null
+  },
+  {
+   "package": "com.amazon.mShop.android.shopping",
+   "name": "Amazon Shopping",
+   "icon": "appfaces/com.amazon.mShop.android.shopping.png",
+   "status": "found",
+   "source": "https://play.google.com/store/apps/details?id=com.amazon.mShop.android.shopping&hl=en_US&gl=US",
+   "width": 512,
+   "height": 512,
+   "reason": null
+  },
+  {
+   "package": "com.facebook.katana",
+   "name": "Facebook",
+   "icon": "appfaces/com.facebook.katana.png",
+   "status": "found",
+   "source": "https://play.google.com/store/apps/details?id=com.facebook.katana&hl=en_US&gl=US",
+   "width": 512,
+   "height": 512,
+   "reason": null
+  },
+  {
+   "package": "com.facebook.orca",
+   "name": "Messenger",
+   "icon": "appfaces/com.facebook.orca.png",
+   "status": "found",
+   "source": "https://play.google.com/store/apps/details?id=com.facebook.orca&hl=en_US&gl=US",
+   "width": 512,
+   "height": 512,
+   "reason": null
+  },
+  {
+   "package": "com.instagram.android",
+   "name": "Instagram",
+   "icon": "appfaces/com.instagram.android.png",
+   "status": "found",
+   "source": "https://play.google.com/store/apps/details?id=com.instagram.android&hl=en_US&gl=US",
+   "width": 512,
+   "height": 512,
+   "reason": null
+  },
+  {
+   "package": "com.google.android.youtube",
+   "name": "YouTube",
+   "icon": "appfaces/com.google.android.youtube.png",
+   "status": "found",
+   "source": "https://play.google.com/store/apps/details?id=com.google.android.youtube&hl=en_US&gl=US",
+   "width": 512,
+   "height": 512,
+   "reason": null
+  },
+  {
+   "package": "com.google.android.apps.youtube.music",
+   "name": "YouTube Music",
+   "icon": "appfaces/com.google.android.apps.youtube.music.png",
+   "status": "found",
+   "source": "https://play.google.com/store/apps/details?id=com.google.android.apps.youtube.music&hl=en_US&gl=US",
+   "width": 512,
+   "height": 512,
+   "reason": null
+  },
+  {
+   "package": "com.google.android.gm",
+   "name": "Gmail",
+   "icon": "appfaces/com.google.android.gm.png",
+   "status": "found",
+   "source": "https://play.google.com/store/apps/details?id=com.google.android.gm&hl=en_US&gl=US",
+   "width": 512,
+   "height": 512,
+   "reason": null
+  },
+  {
+   "package": "com.google.android.apps.maps",
+   "name": "Google Maps",
+   "icon": "appfaces/com.google.android.apps.maps.png",
+   "status": "found",
+   "source": "https://play.google.com/store/apps/details?id=com.google.android.apps.maps&hl=en_US&gl=US",
+   "width": 512,
+   "height": 512,
+   "reason": null
+  },
+  {
+   "package": "com.netflix.mediaclient",
+   "name": "Netflix",
+   "icon": "appfaces/com.netflix.mediaclient.png",
+   "status": "found",
+   "source": "https://play.google.com/store/apps/details?id=com.netflix.mediaclient&hl=en_US&gl=US",
+   "width": 512,
+   "height": 512,
+   "reason": null
+  },
+  {
+   "package": "com.publix.main",
+   "name": "Publix",
+   "icon": "appfaces/com.publix.main.png",
+   "status": "found",
+   "source": "https://play.google.com/store/apps/details?id=com.publix.main&hl=en_US&gl=US",
+   "width": 512,
+   "height": 512,
+   "reason": null
+  },
+  {
+   "package": "com.sec.android.app.sbrowser",
+   "name": "Samsung Browser",
+   "icon": "appfaces/com.sec.android.app.sbrowser.png",
+   "status": "found",
+   "source": "https://play.google.com/store/apps/details?id=com.sec.android.app.sbrowser&hl=en_US&gl=US",
+   "width": 512,
+   "height": 512,
+   "reason": null
+  },
+  {
+   "package": "com.sec.android.app.shealth",
+   "name": "Samsung Health",
+   "icon": "appfaces/com.sec.android.app.shealth.png",
+   "status": "found",
+   "source": "https://play.google.com/store/apps/details?id=com.sec.android.app.shealth&hl=en_US&gl=US",
+   "width": 512,
+   "height": 512,
+   "reason": null
+  },
+  {
+   "package": "com.sec.android.app.samsungapps",
+   "name": null,
+   "icon": null,
+   "status": "not_found",
+   "source": "https://play.google.com/store/apps/details?id=com.sec.android.app.samsungapps&hl=en_US&gl=US",
+   "width": null,
+   "height": null,
+   "reason": "HTTP 404 (not on Play)"
+  },
+  {
+   "package": "com.samsung.android.app.notes",
+   "name": "Samsung Notes",
+   "icon": "appfaces/com.samsung.android.app.notes.png",
+   "status": "found",
+   "source": "https://play.google.com/store/apps/details?id=com.samsung.android.app.notes&hl=en_US&gl=US",
+   "width": 512,
+   "height": 512,
+   "reason": null
+  },
+  {
+   "package": "com.sec.android.easyMover",
+   "name": "Samsung Smart Switch Mobile",
+   "icon": "appfaces/com.sec.android.easyMover.png",
+   "status": "found",
+   "source": "https://play.google.com/store/apps/details?id=com.sec.android.easyMover&hl=en_US&gl=US",
+   "width": 512,
+   "height": 512,
+   "reason": null
+  },
+  {
+   "package": "com.samsung.android.voc",
+   "name": "Samsung Members",
+   "icon": "appfaces/com.samsung.android.voc.png",
+   "status": "found",
+   "source": "https://play.google.com/store/apps/details?id=com.samsung.android.voc&hl=en_US&gl=US",
+   "width": 512,
+   "height": 512,
+   "reason": null
+  },
+  {
+   "package": "com.twitter.android",
+   "name": "X",
+   "icon": "appfaces/com.twitter.android.png",
+   "status": "found",
+   "source": "https://play.google.com/store/apps/details?id=com.twitter.android&hl=en_US&gl=US",
+   "width": 512,
+   "height": 512,
+   "reason": null
+  },
+  {
+   "package": "com.snapchat.android",
+   "name": "Snapchat",
+   "icon": "appfaces/com.snapchat.android.png",
+   "status": "found",
+   "source": "https://play.google.com/store/apps/details?id=com.snapchat.android&hl=en_US&gl=US",
+   "width": 512,
+   "height": 512,
+   "reason": null
+  },
+  {
+   "package": "com.zhiliaoapp.musically",
+   "name": "TikTok - Videos, Shop &amp; LIVE",
+   "icon": "appfaces/com.zhiliaoapp.musically.png",
+   "status": "found",
+   "source": "https://play.google.com/store/apps/details?id=com.zhiliaoapp.musically&hl=en_US&gl=US",
+   "width": 512,
+   "height": 512,
+   "reason": null
+  },
+  {
+   "package": "com.reddit.frontpage",
+   "name": "Reddit",
+   "icon": "appfaces/com.reddit.frontpage.png",
+   "status": "found",
+   "source": "https://play.google.com/store/apps/details?id=com.reddit.frontpage&hl=en_US&gl=US",
+   "width": 512,
+   "height": 512,
+   "reason": null
+  },
+  {
+   "package": "com.pinterest",
+   "name": "Pinterest",
+   "icon": "appfaces/com.pinterest.png",
+   "status": "found",
+   "source": "https://play.google.com/store/apps/details?id=com.pinterest&hl=en_US&gl=US",
+   "width": 512,
+   "height": 512,
+   "reason": null
+  },
+  {
+   "package": "org.telegram.messenger",
+   "name": "Telegram",
+   "icon": "appfaces/org.telegram.messenger.png",
+   "status": "found",
+   "source": "https://play.google.com/store/apps/details?id=org.telegram.messenger&hl=en_US&gl=US",
+   "width": 512,
+   "height": 512,
+   "reason": null
+  },
+  {
+   "package": "com.discord",
+   "name": "Discord - Talk, Play, Hang Out",
+   "icon": "appfaces/com.discord.png",
+   "status": "found",
+   "source": "https://play.google.com/store/apps/details?id=com.discord&hl=en_US&gl=US",
+   "width": 512,
+   "height": 512,
+   "reason": null
+  },
+  {
+   "package": "com.linkedin.android",
+   "name": "LinkedIn: Community &amp; Network",
+   "icon": "appfaces/com.linkedin.android.png",
+   "status": "found",
+   "source": "https://play.google.com/store/apps/details?id=com.linkedin.android&hl=en_US&gl=US",
+   "width": 512,
+   "height": 512,
+   "reason": null
+  },
+  {
+   "package": "com.google.android.apps.messaging",
+   "name": "Google Messages",
+   "icon": "appfaces/com.google.android.apps.messaging.png",
+   "status": "found",
+   "source": "https://play.google.com/store/apps/details?id=com.google.android.apps.messaging&hl=en_US&gl=US",
+   "width": 512,
+   "height": 512,
+   "reason": null
+  },
+  {
+   "package": "com.amazon.avod.thirdpartyclient",
+   "name": "Prime Video",
+   "icon": "appfaces/com.amazon.avod.thirdpartyclient.png",
+   "status": "found",
+   "source": "https://play.google.com/store/apps/details?id=com.amazon.avod.thirdpartyclient&hl=en_US&gl=US",
+   "width": 512,
+   "height": 512,
+   "reason": null
+  },
+  {
+   "package": "com.hulu.plus",
+   "name": "Hulu: Stream TV shows &amp; movies",
+   "icon": "appfaces/com.hulu.plus.png",
+   "status": "found",
+   "source": "https://play.google.com/store/apps/details?id=com.hulu.plus&hl=en_US&gl=US",
+   "width": 512,
+   "height": 512,
+   "reason": null
+  },
+  {
+   "package": "com.disney.disneyplus",
+   "name": "Disney+",
+   "icon": "appfaces/com.disney.disneyplus.png",
+   "status": "found",
+   "source": "https://play.google.com/store/apps/details?id=com.disney.disneyplus&hl=en_US&gl=US",
+   "width": 512,
+   "height": 512,
+   "reason": null
+  },
+  {
+   "package": "com.pandora.android",
+   "name": "Pandora - Music &amp; Podcasts",
+   "icon": "appfaces/com.pandora.android.png",
+   "status": "found",
+   "source": "https://play.google.com/store/apps/details?id=com.pandora.android&hl=en_US&gl=US",
+   "width": 512,
+   "height": 512,
+   "reason": null
+  },
+  {
+   "package": "com.apple.android.music",
+   "name": "Apple Music",
+   "icon": "appfaces/com.apple.android.music.png",
+   "status": "found",
+   "source": "https://play.google.com/store/apps/details?id=com.apple.android.music&hl=en_US&gl=US",
+   "width": 512,
+   "height": 512,
+   "reason": null
+  },
+  {
+   "package": "com.wbd.stream",
+   "name": "HBO Max: Stream TV &amp; Movies",
+   "icon": "appfaces/com.wbd.stream.png",
+   "status": "found",
+   "source": "https://play.google.com/store/apps/details?id=com.wbd.stream&hl=en_US&gl=US",
+   "width": 512,
+   "height": 512,
+   "reason": null
+  },
+  {
+   "package": "com.ebay.mobile",
+   "name": "eBay online shopping &amp; selling",
+   "icon": "appfaces/com.ebay.mobile.png",
+   "status": "found",
+   "source": "https://play.google.com/store/apps/details?id=com.ebay.mobile&hl=en_US&gl=US",
+   "width": 512,
+   "height": 512,
+   "reason": null
+  },
+  {
+   "package": "com.walmart.android",
+   "name": "Walmart: Shopping &amp; Savings",
+   "icon": "appfaces/com.walmart.android.png",
+   "status": "found",
+   "source": "https://play.google.com/store/apps/details?id=com.walmart.android&hl=en_US&gl=US",
+   "width": 512,
+   "height": 512,
+   "reason": null
+  },
+  {
+   "package": "com.target.ui",
+   "name": "Target: Shop. Style. Save.",
+   "icon": "appfaces/com.target.ui.png",
+   "status": "found",
+   "source": "https://play.google.com/store/apps/details?id=com.target.ui&hl=en_US&gl=US",
+   "width": 512,
+   "height": 512,
+   "reason": null
+  },
+  {
+   "package": "com.bestbuy.android",
+   "name": "Best Buy: Shop tech deals",
+   "icon": "appfaces/com.bestbuy.android.png",
+   "status": "found",
+   "source": "https://play.google.com/store/apps/details?id=com.bestbuy.android&hl=en_US&gl=US",
+   "width": 512,
+   "height": 512,
+   "reason": null
+  },
+  {
+   "package": "com.homedepot",
+   "name": null,
+   "icon": null,
+   "status": "not_found",
+   "source": "https://play.google.com/store/apps/details?id=com.homedepot&hl=en_US&gl=US",
+   "width": null,
+   "height": null,
+   "reason": "HTTP 404 (not on Play)"
+  },
+  {
+   "package": "com.lowes.android",
+   "name": "Lowe&#39;s",
+   "icon": "appfaces/com.lowes.android.png",
+   "status": "found",
+   "source": "https://play.google.com/store/apps/details?id=com.lowes.android&hl=en_US&gl=US",
+   "width": 512,
+   "height": 512,
+   "reason": null
+  },
+  {
+   "package": "com.etsy.android",
+   "name": "Etsy: Shop from Real People",
+   "icon": "appfaces/com.etsy.android.png",
+   "status": "found",
+   "source": "https://play.google.com/store/apps/details?id=com.etsy.android&hl=en_US&gl=US",
+   "width": 512,
+   "height": 512,
+   "reason": null
+  },
+  {
+   "package": "com.chase.sig.android",
+   "name": "Chase Mobile",
+   "icon": "appfaces/com.chase.sig.android.png",
+   "status": "found",
+   "source": "https://play.google.com/store/apps/details?id=com.chase.sig.android&hl=en_US&gl=US",
+   "width": 512,
+   "height": 512,
+   "reason": null
+  },
+  {
+   "package": "com.bankofamerica.digitalwallet",
+   "name": null,
+   "icon": null,
+   "status": "not_found",
+   "source": "https://play.google.com/store/apps/details?id=com.bankofamerica.digitalwallet&hl=en_US&gl=US",
+   "width": null,
+   "height": null,
+   "reason": "HTTP 404 (not on Play)"
+  },
+  {
+   "package": "com.wf.wellsfargomobile",
+   "name": "Wells Fargo Mobile\u00ae",
+   "icon": "appfaces/com.wf.wellsfargomobile.png",
+   "status": "found",
+   "source": "https://play.google.com/store/apps/details?id=com.wf.wellsfargomobile&hl=en_US&gl=US",
+   "width": 512,
+   "height": 512,
+   "reason": null
+  },
+  {
+   "package": "com.citi.citimobile",
+   "name": "Citi Mobile\u00ae",
+   "icon": "appfaces/com.citi.citimobile.png",
+   "status": "found",
+   "source": "https://play.google.com/store/apps/details?id=com.citi.citimobile&hl=en_US&gl=US",
+   "width": 512,
+   "height": 512,
+   "reason": null
+  },
+  {
+   "package": "com.usaa.mobile.android.usaa",
+   "name": "USAA Mobile",
+   "icon": "appfaces/com.usaa.mobile.android.usaa.png",
+   "status": "found",
+   "source": "https://play.google.com/store/apps/details?id=com.usaa.mobile.android.usaa&hl=en_US&gl=US",
+   "width": 512,
+   "height": 512,
+   "reason": null
+  },
+  {
+   "package": "com.paypal.android.p2pmobile",
+   "name": "PayPal - Pay, Send, Save",
+   "icon": "appfaces/com.paypal.android.p2pmobile.png",
+   "status": "found",
+   "source": "https://play.google.com/store/apps/details?id=com.paypal.android.p2pmobile&hl=en_US&gl=US",
+   "width": 512,
+   "height": 512,
+   "reason": null
+  },
+  {
+   "package": "com.squareup.cash",
+   "name": "Cash App",
+   "icon": "appfaces/com.squareup.cash.png",
+   "status": "found",
+   "source": "https://play.google.com/store/apps/details?id=com.squareup.cash&hl=en_US&gl=US",
+   "width": 512,
+   "height": 512,
+   "reason": null
+  },
+  {
+   "package": "com.venmo",
+   "name": "Venmo",
+   "icon": "appfaces/com.venmo.png",
+   "status": "found",
+   "source": "https://play.google.com/store/apps/details?id=com.venmo&hl=en_US&gl=US",
+   "width": 512,
+   "height": 512,
+   "reason": null
+  },
+  {
+   "package": "com.android.chrome",
+   "name": "Google Chrome",
+   "icon": "appfaces/com.android.chrome.png",
+   "status": "found",
+   "source": "https://play.google.com/store/apps/details?id=com.android.chrome&hl=en_US&gl=US",
+   "width": 512,
+   "height": 512,
+   "reason": null
+  },
+  {
+   "package": "org.mozilla.firefox",
+   "name": "Firefox Fast &amp; Private Browser",
+   "icon": "appfaces/org.mozilla.firefox.png",
+   "status": "found",
+   "source": "https://play.google.com/store/apps/details?id=org.mozilla.firefox&hl=en_US&gl=US",
+   "width": 512,
+   "height": 512,
+   "reason": null
+  },
+  {
+   "package": "com.brave.browser",
+   "name": "Brave Private Web Browser, VPN",
+   "icon": "appfaces/com.brave.browser.png",
+   "status": "found",
+   "source": "https://play.google.com/store/apps/details?id=com.brave.browser&hl=en_US&gl=US",
+   "width": 512,
+   "height": 512,
+   "reason": null
+  },
+  {
+   "package": "com.opera.browser",
+   "name": "Opera: Private Web Browser",
+   "icon": "appfaces/com.opera.browser.png",
+   "status": "found",
+   "source": "https://play.google.com/store/apps/details?id=com.opera.browser&hl=en_US&gl=US",
+   "width": 512,
+   "height": 512,
+   "reason": null
+  },
+  {
+   "package": "com.microsoft.emmx",
+   "name": "Microsoft Edge",
+   "icon": "appfaces/com.microsoft.emmx.png",
+   "status": "found",
+   "source": "https://play.google.com/store/apps/details?id=com.microsoft.emmx&hl=en_US&gl=US",
+   "width": 512,
+   "height": 512,
+   "reason": null
+  },
+  {
+   "package": "com.google.android.apps.photos",
+   "name": "Google Photos",
+   "icon": "appfaces/com.google.android.apps.photos.png",
+   "status": "found",
+   "source": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos&hl=en_US&gl=US",
+   "width": 512,
+   "height": 512,
+   "reason": null
+  },
+  {
+   "package": "com.google.android.apps.docs",
+   "name": "Google Drive",
+   "icon": "appfaces/com.google.android.apps.docs.png",
+   "status": "found",
+   "source": "https://play.google.com/store/apps/details?id=com.google.android.apps.docs&hl=en_US&gl=US",
+   "width": 512,
+   "height": 512,
+   "reason": null
+  },
+  {
+   "package": "com.microsoft.office.outlook",
+   "name": "Microsoft Outlook",
+   "icon": "appfaces/com.microsoft.office.outlook.png",
+   "status": "found",
+   "source": "https://play.google.com/store/apps/details?id=com.microsoft.office.outlook&hl=en_US&gl=US",
+   "width": 512,
+   "height": 512,
+   "reason": null
+  },
+  {
+   "package": "com.duolingo",
+   "name": "Duolingo: Learn Languages",
+   "icon": "appfaces/com.duolingo.png",
+   "status": "found",
+   "source": "https://play.google.com/store/apps/details?id=com.duolingo&hl=en_US&gl=US",
+   "width": 512,
+   "height": 512,
+   "reason": null
+  },
+  {
+   "package": "com.ubercab",
+   "name": "Uber: Rides, eats, hotels",
+   "icon": "appfaces/com.ubercab.png",
+   "status": "found",
+   "source": "https://play.google.com/store/apps/details?id=com.ubercab&hl=en_US&gl=US",
+   "width": 512,
+   "height": 512,
+   "reason": null
+  },
+  {
+   "package": "com.airbnb.android",
+   "name": "Airbnb",
+   "icon": "appfaces/com.airbnb.android.png",
+   "status": "found",
+   "source": "https://play.google.com/store/apps/details?id=com.airbnb.android&hl=en_US&gl=US",
+   "width": 512,
+   "height": 512,
+   "reason": null
+  },
+  {
+   "package": "com.dd.doordash",
+   "name": "DoorDash: Food, Grocery, More",
+   "icon": "appfaces/com.dd.doordash.png",
+   "status": "found",
+   "source": "https://play.google.com/store/apps/details?id=com.dd.doordash&hl=en_US&gl=US",
+   "width": 512,
+   "height": 512,
+   "reason": null
+  },
+  {
+   "package": "com.grubhub.android",
+   "name": "Grubhub: Food Delivery",
+   "icon": "appfaces/com.grubhub.android.png",
+   "status": "found",
+   "source": "https://play.google.com/store/apps/details?id=com.grubhub.android&hl=en_US&gl=US",
+   "width": 512,
+   "height": 512,
+   "reason": null
+  },
+  {
+   "package": "com.zillow.android.zillowmap",
+   "name": "Zillow: Homes for Sale &amp; Rent",
+   "icon": "appfaces/com.zillow.android.zillowmap.png",
+   "status": "found",
+   "source": "https://play.google.com/store/apps/details?id=com.zillow.android.zillowmap&hl=en_US&gl=US",
+   "width": 512,
+   "height": 512,
+   "reason": null
+  },
+  {
+   "package": "com.booking",
+   "name": "Booking.com: Hotels &amp; Travel",
+   "icon": "appfaces/com.booking.png",
+   "status": "found",
+   "source": "https://play.google.com/store/apps/details?id=com.booking&hl=en_US&gl=US",
+   "width": 512,
+   "height": 512,
+   "reason": null
+  },
+  {
+   "package": "com.expedia.bookings",
+   "name": "Expedia: Hotels, Flights, Cars",
+   "icon": "appfaces/com.expedia.bookings.png",
+   "status": "found",
+   "source": "https://play.google.com/store/apps/details?id=com.expedia.bookings&hl=en_US&gl=US",
+   "width": 512,
+   "height": 512,
+   "reason": null
+  }
+ ],
+ "zip_sha256": "8cfecb2705bb466dacb7754f08a63e5f55cefcfe74fecbb58b57a757c2b1636e",
+ "zip_size": 3386865
+}
