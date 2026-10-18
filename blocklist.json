@@ -1,6 +1,7 @@
 {
-  "updated": "2026-10-15",
+  "updated": "2026-10-17",
   "packages": [
+    "ai.junk.cleaner",
     "antivirus.anti.virus.applock.protection.vpn",
     "antivirus.virus.cleaner.clean.vpn.booster",
     "app.luckymoneygames",
@@ -59,6 +60,7 @@
     "com.inmobi.weather",
     "com.intelli.clean",
     "com.intelligent.heimlich.tool",
+    "com.joywin.play.journey.solitaire.tripeaks.lucky",
     "com.junk.file.sweeper",
     "com.junkeraser.clean",
     "com.keli.imessage3",
@@ -150,6 +152,7 @@
     "org.qck.cle.oyo",
     "org.ssl.wind.clean",
     "org.stemp.fll.clean",
+    "phonecleaner.junkfiles.appmanager.duplicatefileremover.applock",
     "picturetranslate.extractor.text.lite",
     "smarttool.phonecleaner.phoneoptimizer",
     "syn.clean.cool.zbc",
