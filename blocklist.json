@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-17",
+  "updated": "2026-10-18",
   "packages": [
     "ai.junk.cleaner",
     "antivirus.anti.virus.applock.protection.vpn",
@@ -152,6 +152,7 @@
     "org.qck.cle.oyo",
     "org.ssl.wind.clean",
     "org.stemp.fll.clean",
+    "pdf.reader.editor.office",
     "phonecleaner.junkfiles.appmanager.duplicatefileremover.applock",
     "picturetranslate.extractor.text.lite",
     "smarttool.phonecleaner.phoneoptimizer",
