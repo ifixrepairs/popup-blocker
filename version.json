@@ -1,6 +1,6 @@
 {
-  "versionCode": 2002,
-  "versionName": "1.0.1",
-  "apkUrl": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/AdTrapper.apk",
-  "notes": "Better detection: catches cleaner apps like MiraClean and Quick Clean Plus, and launchers that take over your home screen (like Easy Mail). Threat list expanded to 93 known junk apps. AdTrapper can now update itself from inside the app."
+  "versionCode": 2104,
+  "versionName": "11.4.0",
+  "apkUrl": "https://drive.google.com/uc?id=1kFVvEJR8qwE1Lu7QKwnG-4-zW23gbrk1&export=download",
+  "notes": "AdTrapper 11.4 - the white face, same as the computer. One version everywhere now. If your phone refuses the update, delete the old test app and install this one fresh - one time only."
 }
