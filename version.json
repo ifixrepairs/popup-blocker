@@ -1,9 +1,9 @@
 {
-  "versionCode": 2112,
-  "versionName": "11.9.3",
-  "apkUrl": "https://drive.usercontent.google.com/download?id=15hagbX2MATTBTfGdYWPkBcUbcFL2yJrZ&export=download&confirm=t",
-  "notes": "AdTrapper 11.9.3 - Fixed: the makers' own system parts (Samsung, Google, LG and the rest) no longer wear the fake-costume label - that label only lands where it belongs now. The bad list still wins over everything, and a factory part still cannot be removed. The Scan again button is solid now, so it reads clearly in bright light. Same permanent key - installs right over the top.",
-  "apkSize": 50702783,
-  "apkMd5": "604bffc4372a37336d7f1c99cd7872ca",
-  "apkSha256": "7c0ffa8dae8f05267c47dccc0def98dbfe2940ad3b8d4fb7cabdd624f9769e1d"
+  "versionCode": 2113,
+  "versionName": "11.9.4",
+  "apkUrl": "https://drive.usercontent.google.com/download?id=19z68nyZ-WaFq7Upi_Jd73VtQSZCyj4JB&export=download&confirm=t",
+  "notes": "AdTrapper 11.9.4 - The picture up front is the fixed one now: pulled back with dark space around it, so Samsung can't clip the words. Samsung's own Software Update part no longer wears the fake label. NEW: the app backs up its memory (your Keep taps) into your Google backup, and Save/Load memory buttons live on the Get help page - deleting and reinstalling no longer wipes what it learned. Same permanent key - installs right over the top.",
+  "apkSize": 51375613,
+  "apkMd5": "9839450f1bacc8d982d210fb9f416733",
+  "apkSha256": "76e8811dc91bca8c30475be2369d6576dcdbc2d4de85f266623057b3c910fe91"
 }
