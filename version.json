@@ -1,9 +1,9 @@
 {
-  "versionCode": 2111,
-  "versionName": "11.9.2",
-  "apkUrl": "https://drive.usercontent.google.com/download?id=1npThphiC-yK4kTlMm3MZJib1L1_NnWt1&export=download&confirm=t",
-  "notes": "AdTrapper 11.9.2 - Zillow and Google's Dynamic System Updates are on the known-good list. Background Check and Keep This App now sit on EVERY app, whatever its color. The update button now proves the download (size, fingerprint, real app file) before installing - a bad download is refused with a plain message. Same permanent key - installs right over the top.",
+  "versionCode": 2112,
+  "versionName": "11.9.3",
+  "apkUrl": "https://drive.usercontent.google.com/download?id=15hagbX2MATTBTfGdYWPkBcUbcFL2yJrZ&export=download&confirm=t",
+  "notes": "AdTrapper 11.9.3 - Fixed: the makers' own system parts (Samsung, Google, LG and the rest) no longer wear the fake-costume label - that label only lands where it belongs now. The bad list still wins over everything, and a factory part still cannot be removed. The Scan again button is solid now, so it reads clearly in bright light. Same permanent key - installs right over the top.",
   "apkSize": 50702783,
-  "apkMd5": "62a942c030c24aa09942b23d988f846d",
-  "apkSha256": "d53283c58744d7a00b3a8c7b535a1bb130f85742c9471e9b60d19666eac945ec"
+  "apkMd5": "604bffc4372a37336d7f1c99cd7872ca",
+  "apkSha256": "7c0ffa8dae8f05267c47dccc0def98dbfe2940ad3b8d4fb7cabdd624f9769e1d"
 }
