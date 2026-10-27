@@ -1,8 +1,8 @@
 {
   "versionCode": 2113,
   "versionName": "11.9.4",
-  "apkUrl": "https://drive.usercontent.google.com/download?id=19z68nyZ-WaFq7Upi_Jd73VtQSZCyj4JB&export=download&confirm=t",
-  "notes": "AdTrapper 11.9.4 - The picture up front is the fixed one now: pulled back with dark space around it, so Samsung can't clip the words. Samsung's own Software Update part no longer wears the fake label. NEW: the app backs up its memory (your Keep taps) into your Google backup, and Save/Load memory buttons live on the Get help page - deleting and reinstalling no longer wipes what it learned. Same permanent key - installs right over the top.",
+  "apkUrl": "https://drive.usercontent.google.com/download?id=1ytVdFHURz87EIt6lbNtDvI3l0_BQlli8&export=download&confirm=t",
+  "notes": "AdTrapper 11.9.4 - New picture on the front: the monster and the whole AdTrapper name, sitting in the middle with dark all around it, so your Samsung shows it whole instead of clipped. Fixed: Samsung's own Software update piece no longer wears the fake-costume label. New: your Keep list now survives - it rides your phone's own Google backup, and the Guide has Save memory and Load memory buttons for the shop. Same permanent key - installs right over the top.",
   "apkSize": 51375613,
   "apkMd5": "9839450f1bacc8d982d210fb9f416733",
   "apkSha256": "76e8811dc91bca8c30475be2369d6576dcdbc2d4de85f266623057b3c910fe91"
