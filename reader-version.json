@@ -1,7 +1,7 @@
 {
-  "version": "1.13",
+  "version": "1.14",
   "pyw_url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/reader/WhatPhoneIsThis.pyw",
-  "pyw_md5": "e27fa8d1560ef12277dbf2c9a4373f10",
+  "pyw_md5": "4fe7616445dea58d74ef417e5f55fac4",
   "tools_md5": "1f03385b4605b72ff299c1674227ee85",
-  "notes": "Owner face law (2026-10-28): the screen shows MODEL NUMBER and IMEI only \u2014 every other row removed; the voice read is unchanged. Window height now fits the real laid-out face (measured after content lands, incl. the tools banner), so no field can be squeezed off-screen; proven by a headless render probe at 1366x768 and 1920x1080 (window height == required height, both fields mapped). Carries the v1.12 three-road updater and v1.11 tools self-heal."
+  "notes": "Mac fix: the CHECK FOR UPDATES button was unreadable on macOS (owner's field photo 2026-10-28, 'Can't read white') - Aqua renders its own pale button face but takes our white text. update_button_colors() now gives the Mac dark text (#0B141D, same as READ THE PHONE) in both idle and update-available states; Windows/Linux design unchanged. Carries the v1.13 two-field face (MODEL NUMBER + IMEI only), the v1.12 three-road updater and the v1.11 tools self-heal."
 }

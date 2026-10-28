@@ -1,4 +1,4 @@
-"""WHAT PHONE IS THIS v1.13 — one-click phone identifier for the shop bench
+"""WHAT PHONE IS THIS v1.14 — one-click phone identifier for the shop bench
 (Python 3.10+, Windows-first, stdlib only).
 
 The problem: a phone comes in with a dead or unreadable screen, no IMEI
@@ -41,7 +41,7 @@ import wave
 import zipfile
 from dataclasses import dataclass, field
 
-VERSION = "1.13"
+VERSION = "1.14"
 
 SHOP = "iFixx Repairs"
 COPYRIGHT_LINE = "© 2026 iFixx Repairs. All rights reserved."
@@ -2176,6 +2176,22 @@ def heal_tools(manifest=None, fetcher=None, app_dir=None, writable=None,
         return False
 
 
+def update_button_colors(system=None):
+    """(idle, hot) (bg, fg) pairs for the CHECK FOR UPDATES button.
+
+    macOS Aqua buttons ignore the bg we ask for and render their own
+    pale face, but they DO take the fg - white text on that pale face
+    is invisible (field report 2026-10-28, owner's photo of the Mac
+    build: "Can't read white"). On the Mac the button text therefore
+    goes DARK, matching the READ THE PHONE button; everywhere else
+    the dark-face / white-text design stands.
+    """
+    if (system or platform.system()) == "Darwin":
+        dark = "#0B141D"
+        return (("#E8EEF4", dark), ("#168DE2", dark))
+    return (("#16334E", FG_TEXT), ("#168DE2", "#FFFFFF"))
+
+
 def sanitize_for_powershell(text):
     """Make `text` safe to embed in a PowerShell single-quoted string."""
     return (str(text).replace("'", " ").replace('"', " ")
@@ -2812,9 +2828,10 @@ def main():
     update_status.pack(pady=sizes["upd_status_pady"])
     update_wrap = tk.Frame(controls, bg="#168DE2")
     update_wrap.pack(pady=sizes["update_wrap_pady"])
+    upd_idle, upd_hot = update_button_colors()
     update_btn = tk.Button(update_wrap, text="CHECK FOR UPDATES",
                            font=("Segoe UI", upd_fs, "bold"), width=22,
-                           bg="#16334E", fg=FG_TEXT,
+                           bg=upd_idle[0], fg=upd_idle[1],
                            activebackground="#214A6C",
                            relief="flat", padx=18, pady=6, cursor="hand2")
     update_btn.pack(padx=2, pady=2)
@@ -2963,7 +2980,7 @@ def main():
                                  f"{manifest['version']}", fg=GOOD)
                         update_btn.config(
                             text=f"TAP TO UPDATE \u2014 v{manifest['version']}",
-                            bg="#168DE2", fg="#FFFFFF")
+                            bg=upd_hot[0], fg=upd_hot[1])
                         if manual:
                             speak(f"Version {manifest['version']} is "
                                   f"ready. Tap the update button to "
@@ -2972,7 +2989,7 @@ def main():
                         upd["manifest"] = None
                         update_status.config(
                             text=f"Up to date (v{VERSION})", fg=FG_DIM)
-                        update_btn.config(bg="#16334E", fg=FG_TEXT)
+                        update_btn.config(bg=upd_idle[0], fg=upd_idle[1])
                         if manual:
                             speak("You're up to date.")
                 else:
@@ -2980,7 +2997,7 @@ def main():
                     if ok:
                         upd["manifest"] = None
                         update_btn.config(text="CHECK FOR UPDATES",
-                                          bg="#16334E", fg=FG_TEXT)
+                                          bg=upd_idle[0], fg=upd_idle[1])
                         update_status.config(
                             text=f"Updated to v{manifest['version']} \u2014 "
                                  f"restart the reader", fg=GOOD)
