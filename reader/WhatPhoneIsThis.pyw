@@ -1,4 +1,4 @@
-"""WHAT PHONE IS THIS v1.9 — one-click phone identifier for the shop bench
+"""WHAT PHONE IS THIS v1.10 — one-click phone identifier for the shop bench
 (Python 3.10+, Windows-first, stdlib only).
 
 The problem: a phone comes in with a dead or unreadable screen, no IMEI
@@ -39,7 +39,7 @@ import urllib.request
 import wave
 from dataclasses import dataclass, field
 
-VERSION = "1.9"
+VERSION = "1.10"
 
 SHOP = "iFixx Repairs"
 COPYRIGHT_LINE = "© 2026 iFixx Repairs. All rights reserved."
@@ -2304,6 +2304,19 @@ class PhoneWatcher:
 # GUI — built only when run as a program. Importing this file is headless
 # and safe: no window, no display calls.
 # ============================================================================
+def fit_window_size(screen_w, screen_h):
+    """Window size that always FITS the screen it opens on.
+
+    Owner rule (2026-10-28, after v1.9 opened bigger than his bench
+    screen): the app must never open wider or taller than the display.
+    Full design size is 860x980; on smaller screens the window takes
+    94% of the width and 92% of the height instead, with sane floors.
+    """
+    w = min(860, int(screen_w * 0.94))
+    h = min(980, int(screen_h * 0.92))
+    return max(640, w), max(520, h)
+
+
 def main():
     import tkinter as tk
 
@@ -2311,17 +2324,63 @@ def main():
     results = queue.Queue()
     busy = {"flag": False}
 
+    if os.name == "nt":
+        # Windows display scaling must not blow the window up past the
+        # screen edges: declare DPI awareness before the window exists
+        # so Tk works in true pixels (v1.9 overflowed a scaled screen).
+        try:
+            import ctypes
+            try:
+                ctypes.windll.shcore.SetProcessDpiAwareness(2)
+            except Exception:
+                ctypes.windll.user32.SetProcessDPIAware()
+        except Exception:
+            pass
+
     root = tk.Tk()
     root.title("WHAT PHONE IS THIS")
     root.configure(bg=BG_APP)
-    root.geometry("860x980")
-    root.minsize(680, 560)
+    screen_w = root.winfo_screenwidth()
+    screen_h = root.winfo_screenheight()
+    win_w, win_h = fit_window_size(screen_w, screen_h)
+    root.geometry(f"{win_w}x{win_h}"
+                  f"+{max(0, (screen_w - win_w) // 2)}"
+                  f"+{max(0, (screen_h - win_h) // 2)}")
+    root.minsize(640, 520)
 
     logo_img = None
     try:
         logo_img = tk.PhotoImage(data=LOGO_PNG_B64)
     except Exception:
         logo_img = None
+    # Size tiers: the face shrinks in steps so EVERY row and button
+    # stays visible even on a small screen (v1.10 first cut still
+    # clipped rows at 706px tall — the tiers fix that by construction).
+    if win_h >= 920:
+        tier = 0
+    elif win_h >= 780:
+        tier = 1
+    else:
+        tier = 2
+    logo_sub = (1, 2, 3)[tier]
+    status_fs = (15, 15, 13)[tier]
+    head_fs = (14, 14, 12)[tier]
+    head_pady = ((12, 8), (12, 8), (6, 2))[tier]
+    cap_fs = (12, 12, 11)[tier]
+    val_fs = (14, 14, 12)[tier]
+    model_fs = (16, 16, 14)[tier]
+    det_fs = (12, 12, 11)[tier]
+    row_pady = (4, 2, 1)[tier]
+    lbl_pady = (10, 6, 3)[tier]
+    read_fs = (20, 20, 17)[tier]
+    hint_fs = (13, 13, 11)[tier]
+    upd_fs = (14, 14, 12)[tier]
+
+    if logo_img is not None and logo_sub > 1:
+        try:
+            logo_img = logo_img.subsample(logo_sub)
+        except Exception:
+            pass
     if logo_img is not None:
         tk.Label(root, image=logo_img, bg=BG_APP).pack(pady=(10, 0))
         root._logo_img = logo_img  # keep a reference alive
@@ -2331,19 +2390,19 @@ def main():
                  bg=BG_APP, fg=GOLD).pack(pady=(16, 2))
 
     status = tk.Label(root, text=NO_PHONE_TEXT,
-                      font=("Segoe UI", 15, "bold"),
-                      bg=BG_APP, fg=WARN, wraplength=760,
+                      font=("Segoe UI", status_fs, "bold"),
+                      bg=BG_APP, fg=WARN, wraplength=max(300, win_w - 100),
                       justify="center")
-    status.pack(pady=(2, 6))
+    status.pack(pady=(0, 2) if tier == 2 else (2, 6))
 
     panel = tk.Frame(root, bg=BG_PANEL, highlightbackground="#294761",
                      highlightthickness=1, bd=0)
 
     head = tk.Frame(panel, bg=BG_PANEL)
-    head.pack(fill="x", padx=16, pady=(12, 8))
+    head.pack(fill="x", padx=16, pady=head_pady)
     tk.Frame(head, bg=GOLD, width=4, height=20).pack(side="left")
     tk.Label(head, text="DEVICE INFORMATION",
-             font=("Segoe UI", 14, "bold"), bg=BG_PANEL,
+             font=("Segoe UI", head_fs, "bold"), bg=BG_PANEL,
              fg=FG_TEXT).pack(side="left", padx=(10, 0))
 
     ROW_BG = "#16334E"
@@ -2353,58 +2412,63 @@ def main():
     def make_row(caption):
         row = tk.Frame(panel, bg=ROW_BG, highlightbackground=ROW_BORDER,
                        highlightthickness=1, bd=0)
-        row.pack(fill="x", padx=14, pady=4)
-        tk.Label(row, text=caption, font=("Segoe UI", 12, "bold"),
+        row.pack(fill="x", padx=14, pady=row_pady)
+        tk.Label(row, text=caption, font=("Segoe UI", cap_fs, "bold"),
                  bg=ROW_BG, fg=MUTED).pack(side="left", padx=(14, 8),
-                                           pady=10)
-        value = tk.Label(row, text="—", font=("Segoe UI", 14, "bold"),
+                                           pady=lbl_pady)
+        value = tk.Label(row, text="—", font=("Segoe UI", val_fs, "bold"),
                          bg=ROW_BG, fg=FG_TEXT)
         value.pack(side="right", padx=(8, 14), pady=10)
         return value
 
     model_value = make_row("MODEL")
-    model_value.config(font=("Segoe UI", 16, "bold"), fg="#FFC857")
+    model_value.config(font=("Segoe UI", model_fs, "bold"), fg="#FFC857",
+                       wraplength=max(180, win_w - 380), justify="right")
     modelnum_value = make_row("MODEL NUMBER")
     imei_value = make_row("IMEI")
     serial_value = make_row("SERIAL")
     battery_value = make_row("BATTERY")
     details_value = make_row("DETAILS")
-    details_value.config(font=("Segoe UI", 12, "bold"), wraplength=430,
+    details_value.config(font=("Segoe UI", det_fs, "bold"),
+                         wraplength=max(180, win_w - 430),
                          justify="right")
 
     note = tk.Label(panel, text="", font=("Segoe UI", 12),
-                    bg=BG_PANEL, fg=FG_DIM, wraplength=740, height=2,
+                    bg=BG_PANEL, fg=FG_DIM, wraplength=max(300, win_w - 120),
+                    height=2,
                     justify="center")
-    note.pack(pady=(2, 6))
+    if tier < 2:
+        note.pack(pady=(2, 6))
 
     controls = tk.Frame(root, bg=BG_APP)
-    controls.pack(side="bottom", fill="x", pady=(0, 6))
+    controls.pack(side="bottom", fill="x", pady=(0, 2) if tier == 2 else (0, 6))
     panel.pack(fill="both", expand=True, padx=18, pady=4)
 
     button = tk.Button(controls, text="READ THE PHONE",
-                       font=("Segoe UI", 20, "bold"), width=22,
+                       font=("Segoe UI", read_fs, "bold"), width=22,
                        bg=GOLD, fg="#0B141D", activebackground="#F2C14E",
                        relief="flat", padx=26, pady=8, cursor="hand2")
-    button.pack(pady=(10, 4))
+    button.pack(pady=(6, 2) if tier == 2 else (10, 4))
 
-    hint = tk.Label(controls, text=FASTBOOT_HINT, font=("Segoe UI", 13, "bold"),
+    hint = tk.Label(controls, text=FASTBOOT_HINT, font=("Segoe UI", hint_fs, "bold"),
                     bg=BG_APP, fg=ACCENT)
     hint.pack()
 
     update_status = tk.Label(controls, text="",
                              font=("Segoe UI", 12, "bold"),
                              bg=BG_APP, fg=GOLD)
-    update_status.pack(pady=(8, 0))
+    update_status.pack(pady=(4, 0) if tier == 2 else (8, 0))
     update_wrap = tk.Frame(controls, bg="#168DE2")
-    update_wrap.pack(pady=(2, 4))
+    update_wrap.pack(pady=(1, 2) if tier == 2 else (2, 4))
     update_btn = tk.Button(update_wrap, text="CHECK FOR UPDATES",
-                           font=("Segoe UI", 14, "bold"), width=22,
+                           font=("Segoe UI", upd_fs, "bold"), width=22,
                            bg="#16334E", fg=FG_TEXT,
                            activebackground="#214A6C",
                            relief="flat", padx=18, pady=6, cursor="hand2")
     update_btn.pack(padx=2, pady=2)
     tk.Label(controls, text=f"{PRIVACY_LINE}  {COPYRIGHT_LINE}",
-             font=("Segoe UI", 10), bg=BG_APP, fg=FG_DIM).pack(pady=(4, 10))
+             font=("Segoe UI", 10), bg=BG_APP, fg=FG_DIM).pack(
+                 pady=(2, 4) if tier == 2 else (4, 10))
 
     def show_result(result, from_manual=False):
         if result.status == "tools_missing":

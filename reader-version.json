@@ -1,6 +1,6 @@
 {
-  "version": "1.9",
+  "version": "1.10",
   "pyw_url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/reader/WhatPhoneIsThis.pyw",
-  "pyw_md5": "91b0c18c8b31aa036ca01c39d0422080",
-  "notes": "ChatGPT's rows face, picked by the owner: DEVICE INFORMATION panel, raised left/right rows, BATTERY on its own row, white-and-blue CHECK FOR UPDATES."
+  "pyw_md5": "864b4a5e0f2368aa998143679b7b8007",
+  "notes": "Window-fit fix (owner video 2026-10-28: v1.9 opened bigger than his bench screen): the window now sizes itself to the screen it opens on, Windows display scaling is handled, and the face shrinks in steps on small screens so every row and button stays visible."
 }
