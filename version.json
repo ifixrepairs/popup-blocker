@@ -1,9 +1,9 @@
 {
-  "versionCode": 2113,
-  "versionName": "11.9.4",
-  "apkUrl": "https://drive.usercontent.google.com/download?id=1ytVdFHURz87EIt6lbNtDvI3l0_BQlli8&export=download&confirm=t",
-  "notes": "AdTrapper 11.9.4 - New picture on the front: the monster and the whole AdTrapper name, sitting in the middle with dark all around it, so your Samsung shows it whole instead of clipped. Fixed: Samsung's own Software update piece no longer wears the fake-costume label. New: your Keep list now survives - it rides your phone's own Google backup, and the Guide has Save memory and Load memory buttons for the shop. Same permanent key - installs right over the top.",
+  "versionCode": 2114,
+  "versionName": "11.9.5",
+  "apkUrl": "https://drive.usercontent.google.com/download?id=1nBOhlGog1g3KM4b3P87LUIlaFl9UKPjl&export=download&confirm=t",
+  "notes": "AdTrapper 11.9.5 - Fixed the freeze: checking a download used to lock the app up until Android asked to close it. The check now runs in the background with a Checking the download card, so updates land smooth. Proven start to finish on a real shop phone by the test rig before release. Same permanent key - installs right over the top.",
   "apkSize": 51375613,
-  "apkMd5": "9839450f1bacc8d982d210fb9f416733",
-  "apkSha256": "76e8811dc91bca8c30475be2369d6576dcdbc2d4de85f266623057b3c910fe91"
+  "apkMd5": "7eaa2eb0c91b8cf6c27c0f77c4f70145",
+  "apkSha256": "74acdd15f98f1b69ce3c7a921fecc0fb606b51e534f73db99633a5245f123b5f"
 }
