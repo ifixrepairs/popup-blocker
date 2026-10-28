@@ -1,6 +1,6 @@
 {
-  "version": "1.7",
+  "version": "1.8",
   "pyw_url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/reader/WhatPhoneIsThis.pyw",
-  "pyw_md5": "2c84c77e3591e7b783f92a30504b77ae",
-  "notes": "Adds fogona = Moto G 5G 2024 (XT2413) to the name table."
+  "pyw_md5": "db298ec935787c07fcc1d5aaaf4b8e22",
+  "notes": "The logo face: owner's artwork as the header, gold labels, big gold READ button, bottom-pinned controls, full-size CHECK FOR UPDATES."
 }
