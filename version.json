@@ -1,9 +1,9 @@
 {
-  "versionCode": 2114,
-  "versionName": "11.9.5",
-  "apkUrl": "https://drive.usercontent.google.com/download?id=1nBOhlGog1g3KM4b3P87LUIlaFl9UKPjl&export=download&confirm=t",
-  "notes": "AdTrapper 11.9.5 - Fixed the freeze: checking a download used to lock the app up until Android asked to close it. The check now runs in the background with a Checking the download card, so updates land smooth. Proven start to finish on a real shop phone by the test rig before release. Same permanent key - installs right over the top.",
-  "apkSize": 51375613,
-  "apkMd5": "7eaa2eb0c91b8cf6c27c0f77c4f70145",
-  "apkSha256": "74acdd15f98f1b69ce3c7a921fecc0fb606b51e534f73db99633a5245f123b5f"
+  "versionCode": 2116,
+  "versionName": "11.9.6",
+  "apkUrl": "https://drive.usercontent.google.com/download?id=1uXUSDnvGhQwrhHDszd78sSaIGvXfu3Xv&export=download&confirm=t",
+  "apkSize": 51375705,
+  "apkMd5": "71cee2bddb61db8d412ac72a2cfdde43",
+  "apkSha256": "62dc1255eaf9cadca6c4ed90b431b0d8b72ed4628f0314612dd6450e870892a2",
+  "notes": "Your staff PIN lock is back: See all apps now asks for the staff PIN first, just like you set it. Also carries the freeze fix — checking a download can no longer lock the app up. Tap Check for updates to get it."
 }
