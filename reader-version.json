@@ -1,6 +1,6 @@
 {
-  "version": "1.8",
+  "version": "1.9",
   "pyw_url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/reader/WhatPhoneIsThis.pyw",
-  "pyw_md5": "db298ec935787c07fcc1d5aaaf4b8e22",
-  "notes": "The logo face: owner's artwork as the header, gold labels, big gold READ button, bottom-pinned controls, full-size CHECK FOR UPDATES."
+  "pyw_md5": "91b0c18c8b31aa036ca01c39d0422080",
+  "notes": "ChatGPT's rows face, picked by the owner: DEVICE INFORMATION panel, raised left/right rows, BATTERY on its own row, white-and-blue CHECK FOR UPDATES."
 }

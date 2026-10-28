@@ -1,4 +1,4 @@
-"""WHAT PHONE IS THIS v1.8 — one-click phone identifier for the shop bench
+"""WHAT PHONE IS THIS v1.9 — one-click phone identifier for the shop bench
 (Python 3.10+, Windows-first, stdlib only).
 
 The problem: a phone comes in with a dead or unreadable screen, no IMEI
@@ -39,7 +39,7 @@ import urllib.request
 import wave
 from dataclasses import dataclass, field
 
-VERSION = "1.8"
+VERSION = "1.9"
 
 SHOP = "iFixx Repairs"
 COPYRIGHT_LINE = "© 2026 iFixx Repairs. All rights reserved."
@@ -2336,46 +2336,46 @@ def main():
                       justify="center")
     status.pack(pady=(2, 6))
 
-    panel = tk.Frame(root, bg=BG_PANEL, highlightbackground=GOLD_DEEP,
-                     highlightthickness=2, bd=0)
+    panel = tk.Frame(root, bg=BG_PANEL, highlightbackground="#294761",
+                     highlightthickness=1, bd=0)
 
-    tk.Label(panel, text="MODEL", font=("Segoe UI", 13, "bold"),
-             bg=BG_PANEL, fg=GOLD).pack(pady=(10, 0))
-    model_value = tk.Label(panel, text="—", font=("Segoe UI", 34, "bold"),
-                           bg=BG_PANEL, fg=FG_TEXT, wraplength=740,
-                           justify="center")
-    model_value.pack(pady=(2, 2))
+    head = tk.Frame(panel, bg=BG_PANEL)
+    head.pack(fill="x", padx=16, pady=(12, 8))
+    tk.Frame(head, bg=GOLD, width=4, height=20).pack(side="left")
+    tk.Label(head, text="DEVICE INFORMATION",
+             font=("Segoe UI", 14, "bold"), bg=BG_PANEL,
+             fg=FG_TEXT).pack(side="left", padx=(10, 0))
 
-    tk.Label(panel, text="MODEL NUMBER", font=("Segoe UI", 13, "bold"),
-             bg=BG_PANEL, fg=GOLD).pack()
-    modelnum_value = tk.Label(panel, text="—",
-                              font=("Segoe UI", 22, "bold"),
-                              bg=BG_PANEL, fg=FG_TEXT)
-    modelnum_value.pack(pady=(0, 4))
+    ROW_BG = "#16334E"
+    ROW_BORDER = "#294761"
+    MUTED = "#9FB3C8"
 
-    tk.Label(panel, text="IMEI", font=("Segoe UI", 13, "bold"),
-             bg=BG_PANEL, fg=GOLD).pack()
-    imei_value = tk.Label(panel, text="—", font=("Segoe UI", 22, "bold"),
-                          bg=BG_PANEL, fg=FG_TEXT)
-    imei_value.pack(pady=(0, 4))
+    def make_row(caption):
+        row = tk.Frame(panel, bg=ROW_BG, highlightbackground=ROW_BORDER,
+                       highlightthickness=1, bd=0)
+        row.pack(fill="x", padx=14, pady=4)
+        tk.Label(row, text=caption, font=("Segoe UI", 12, "bold"),
+                 bg=ROW_BG, fg=MUTED).pack(side="left", padx=(14, 8),
+                                           pady=10)
+        value = tk.Label(row, text="—", font=("Segoe UI", 14, "bold"),
+                         bg=ROW_BG, fg=FG_TEXT)
+        value.pack(side="right", padx=(8, 14), pady=10)
+        return value
 
-    tk.Label(panel, text="SERIAL", font=("Segoe UI", 13, "bold"),
-             bg=BG_PANEL, fg=GOLD).pack()
-    serial_value = tk.Label(panel, text="—", font=("Segoe UI", 22, "bold"),
-                            bg=BG_PANEL, fg=FG_TEXT)
-    serial_value.pack(pady=(0, 4))
-
-    tk.Label(panel, text="DETAILS", font=("Segoe UI", 13, "bold"),
-             bg=BG_PANEL, fg=GOLD).pack()
-    details_value = tk.Label(panel, text="—", font=("Segoe UI", 15, "bold"),
-                             bg=BG_PANEL, fg=FG_TEXT, wraplength=740,
-                             justify="center")
-    details_value.pack(pady=(0, 4))
+    model_value = make_row("MODEL")
+    model_value.config(font=("Segoe UI", 16, "bold"), fg="#FFC857")
+    modelnum_value = make_row("MODEL NUMBER")
+    imei_value = make_row("IMEI")
+    serial_value = make_row("SERIAL")
+    battery_value = make_row("BATTERY")
+    details_value = make_row("DETAILS")
+    details_value.config(font=("Segoe UI", 12, "bold"), wraplength=430,
+                         justify="right")
 
     note = tk.Label(panel, text="", font=("Segoe UI", 12),
                     bg=BG_PANEL, fg=FG_DIM, wraplength=740, height=2,
                     justify="center")
-    note.pack(pady=(0, 6))
+    note.pack(pady=(2, 6))
 
     controls = tk.Frame(root, bg=BG_APP)
     controls.pack(side="bottom", fill="x", pady=(0, 6))
@@ -2395,11 +2395,14 @@ def main():
                              font=("Segoe UI", 12, "bold"),
                              bg=BG_APP, fg=GOLD)
     update_status.pack(pady=(8, 0))
-    update_btn = tk.Button(controls, text="CHECK FOR UPDATES",
+    update_wrap = tk.Frame(controls, bg="#168DE2")
+    update_wrap.pack(pady=(2, 4))
+    update_btn = tk.Button(update_wrap, text="CHECK FOR UPDATES",
                            font=("Segoe UI", 14, "bold"), width=22,
-                           bg=BG_PANEL, fg=GOLD, activebackground=GOLD_DEEP,
+                           bg="#16334E", fg=FG_TEXT,
+                           activebackground="#214A6C",
                            relief="flat", padx=18, pady=6, cursor="hand2")
-    update_btn.pack(pady=(2, 4))
+    update_btn.pack(padx=2, pady=2)
     tk.Label(controls, text=f"{PRIVACY_LINE}  {COPYRIGHT_LINE}",
              font=("Segoe UI", 10), bg=BG_APP, fg=FG_DIM).pack(pady=(4, 10))
 
@@ -2411,6 +2414,7 @@ def main():
             serial_value.config(text="—")
             details_value.config(text="—")
             modelnum_value.config(text="—")
+            battery_value.config(text="—")
             note.config(text="")
             return
         if result.info is None:
@@ -2420,21 +2424,24 @@ def main():
             serial_value.config(text="—")
             details_value.config(text="—")
             modelnum_value.config(text="—")
+            battery_value.config(text="—")
             note.config(text="")
             return
         info = result.info
-        det = []
-        if info.android_version:
-            det.append(f"Android {info.android_version}")
         if info.battery_level >= 0:
-            seg = f"Battery {info.battery_level}%"
+            seg = f"{info.battery_level}%"
             if info.battery_health:
                 seg += f" ({info.battery_health})"
             if info.battery_cycles >= 0:
                 seg += f" · {info.battery_cycles} cycles"
-            det.append(seg)
+            battery_value.config(text=seg)
         elif info.battery_volts:
-            det.append(f"Battery {info.battery_volts:.1f} V")
+            battery_value.config(text=f"{info.battery_volts:.1f} V")
+        else:
+            battery_value.config(text="—")
+        det = []
+        if info.android_version:
+            det.append(f"Android {info.android_version}")
         if info.storage_gb:
             det.append(f"Storage {storage_tier(info.storage_gb)} GB")
         if info.ram_gb:
@@ -2552,7 +2559,7 @@ def main():
                                  f"{manifest['version']}", fg=GOOD)
                         update_btn.config(
                             text=f"TAP TO UPDATE \u2014 v{manifest['version']}",
-                            bg=GOLD, fg="#0B141D")
+                            bg="#168DE2", fg="#FFFFFF")
                         if manual:
                             speak(f"Version {manifest['version']} is "
                                   f"ready. Tap the update button to "
@@ -2561,7 +2568,7 @@ def main():
                         upd["manifest"] = None
                         update_status.config(
                             text=f"Up to date (v{VERSION})", fg=FG_DIM)
-                        update_btn.config(bg=BG_PANEL, fg=GOLD)
+                        update_btn.config(bg="#16334E", fg=FG_TEXT)
                         if manual:
                             speak("You're up to date.")
                 else:
@@ -2569,7 +2576,7 @@ def main():
                     if ok:
                         upd["manifest"] = None
                         update_btn.config(text="CHECK FOR UPDATES",
-                                          bg=BG_PANEL, fg=GOLD)
+                                          bg="#16334E", fg=FG_TEXT)
                         update_status.config(
                             text=f"Updated to v{manifest['version']} \u2014 "
                                  f"restart the reader", fg=GOOD)
