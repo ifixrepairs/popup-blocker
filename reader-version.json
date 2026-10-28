@@ -1,7 +1,7 @@
 {
-  "version": "1.11",
+  "version": "1.12",
   "pyw_url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/reader/WhatPhoneIsThis.pyw",
-  "pyw_md5": "49fa1995be2555a9cedb6e0197839540",
+  "pyw_md5": "4f865f16ab8aca9b9d917e8960812f3f",
   "tools_md5": "1f03385b4605b72ff299c1674227ee85",
-  "notes": "Self-healing phone tools (owner field case 2026-10-28: a copy on the counter PC sat in a folder with no adb/fastboot and could never read a phone): a Windows copy that finds neither tool now downloads the tools pack from the shelf by itself, MD5-checked, and the window position is clamped so the whole window always opens on screen."
+  "notes": "Smaller window + tougher update (owner field case 2026-10-28, counter PC): caps 780x860 with a compact tier for small screens, and the updater now tries three download roads (GitHub raw, jsDelivr, github.com raw) with a retry on the manifest, MD5-checked on every road. Carries the v1.11 self-healing tools pack and on-screen window clamp."
 }

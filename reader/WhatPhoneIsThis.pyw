@@ -1,4 +1,4 @@
-"""WHAT PHONE IS THIS v1.11 — one-click phone identifier for the shop bench
+"""WHAT PHONE IS THIS v1.12 — one-click phone identifier for the shop bench
 (Python 3.10+, Windows-first, stdlib only).
 
 The problem: a phone comes in with a dead or unreadable screen, no IMEI
@@ -41,7 +41,7 @@ import wave
 import zipfile
 from dataclasses import dataclass, field
 
-VERSION = "1.11"
+VERSION = "1.12"
 
 SHOP = "iFixx Repairs"
 COPYRIGHT_LINE = "© 2026 iFixx Repairs. All rights reserved."
@@ -1985,16 +1985,52 @@ def _fetch_bytes(url, timeout=10):
 
 
 def fetch_update_manifest(fetcher=None):
-    """The shelf manifest dict, or None on any failure."""
-    try:
-        raw = (fetcher or _fetch_bytes)(UPDATE_MANIFEST_URL, timeout=10)
-        data = json.loads(raw.decode("utf-8"))
-        if (isinstance(data, dict) and data.get("version")
-                and data.get("pyw_url")):
-            return data
-    except Exception:
-        pass
+    """The shelf manifest dict, or None on any failure.
+
+    One retry (v1.12): a single flaky fetch on a shop network used to
+    read as "no update / update failed" — the manifest is tiny, so
+    asking twice costs nothing and saves a needless dead end.
+    """
+    fetch = fetcher or _fetch_bytes
+    for _attempt in range(2):
+        try:
+            raw = fetch(UPDATE_MANIFEST_URL, timeout=10)
+            data = json.loads(raw.decode("utf-8"))
+            if (isinstance(data, dict) and data.get("version")
+                    and data.get("pyw_url")):
+                return data
+        except Exception:
+            pass
     return None
+
+
+# Fallback payload roads (v1.12) — the same shelf file served by two
+# other CDNs/hosts. The counter-PC field case (2026-10-28): the 1.10
+# -> 1.11 in-app update failed again and again ("Downloading the
+# update..." -> "Update didn't go through") while the shelf verified
+# fine elsewhere, so the raw.githubusercontent road itself is the
+# fragile part. apply_update walks these in order after the
+# manifest's own pyw_url; every road is held to the same MD5.
+UPDATE_FALLBACK_ROADS = (
+    "https://cdn.jsdelivr.net/gh/ifixrepairs/popup-blocker@main/"
+    "reader/WhatPhoneIsThis.pyw",
+    "https://github.com/ifixrepairs/popup-blocker/raw/refs/heads/main/"
+    "reader/WhatPhoneIsThis.pyw",
+)
+
+
+def payload_roads(manifest):
+    """Download roads for the update payload, in try order: the
+    manifest's pyw_url first, then the fallback mirrors of the same
+    shelf file (de-duplicated)."""
+    roads = []
+    primary = (manifest or {}).get("pyw_url")
+    if primary:
+        roads.append(primary)
+    for url in UPDATE_FALLBACK_ROADS:
+        if url not in roads:
+            roads.append(url)
+    return roads
 
 
 def update_available(manifest, current=None):
@@ -2006,13 +2042,28 @@ def update_available(manifest, current=None):
 
 def apply_update(manifest, target=None, fetcher=None):
     """Download the shelf .pyw, MD5-verify it, swap it in with a
-    .bak backup of the running file. True only on a clean swap."""
-    try:
-        data = (fetcher or _fetch_bytes)(manifest["pyw_url"], timeout=60)
-    except Exception:
-        return False
+    .bak backup of the running file. True only on a clean swap.
+
+    v1.12: the download tries each road from payload_roads() in
+    order — a network error, an HTTP error, or a bad MD5 moves on
+    to the next road instead of failing the whole update. The swap
+    discipline is unchanged: the winning bytes are written to a
+    temp file, the running file is backed up to .bak, then the
+    temp file replaces it. If every road fails, nothing is touched.
+    """
+    fetch = fetcher or _fetch_bytes
     want = str(manifest.get("pyw_md5") or "").lower()
-    if want and hashlib.md5(data).hexdigest() != want:
+    data = None
+    for road in payload_roads(manifest):
+        try:
+            got = fetch(road, timeout=60)
+        except Exception:
+            continue
+        if want and hashlib.md5(got).hexdigest() != want:
+            continue
+        data = got
+        break
+    if data is None:
         return False
     dest = target or os.path.abspath(__file__)
     try:
@@ -2438,12 +2489,25 @@ def fit_window_size(screen_w, screen_h):
 
     Owner rule (2026-10-28, after v1.9 opened bigger than his bench
     screen): the app must never open wider or taller than the display.
-    Full design size is 860x980; on smaller screens the window takes
-    94% of the width and 92% of the height instead, with sane floors.
+    Full design size is 780x860 (v1.12 — the owner still found the
+    860x980 window oversized on the counter screen); on smaller
+    screens the window takes 94% of the width and 92% of the height
+    instead, with sane floors.
     """
-    w = min(860, int(screen_w * 0.94))
-    h = min(980, int(screen_h * 0.92))
-    return max(640, w), max(520, h)
+    w = min(780, int(screen_w * 0.94))
+    h = min(860, int(screen_h * 0.92))
+    return max(600, w), max(460, h)
+
+
+def compact_layout(screen_w, screen_h):
+    """True when the screen is small enough to want the compact face.
+
+    v1.12: under 900 px tall or under 1100 px wide — the counter-PC
+    class of screen — the face drops one size tier: tighter paddings
+    and fonts one step smaller. The model name stays the biggest
+    thing on the face at every tier (the tier table keeps it so).
+    """
+    return screen_h < 900 or screen_w < 1100
 
 
 def clamp_window_position(x, y, win_w, win_h, screen_w, screen_h):
@@ -2494,7 +2558,7 @@ def main():
         (screen_w - win_w) // 2, (screen_h - win_h) // 2,
         win_w, win_h, screen_w, screen_h)
     root.geometry(f"{win_w}x{win_h}+{win_x}+{win_y}")
-    root.minsize(640, 520)
+    root.minsize(600, 460)
 
     logo_img = None
     try:
@@ -2504,12 +2568,18 @@ def main():
     # Size tiers: the face shrinks in steps so EVERY row and button
     # stays visible even on a small screen (v1.10 first cut still
     # clipped rows at 706px tall — the tiers fix that by construction).
-    if win_h >= 920:
+    # v1.12: the window now caps at 860 tall, so the tiers key off the
+    # new heights; a compact screen (compact_layout) drops one more
+    # tier — tighter paddings, fonts one step smaller.
+    compact = compact_layout(screen_w, screen_h)
+    if win_h >= 800:
         tier = 0
-    elif win_h >= 780:
+    elif win_h >= 640:
         tier = 1
     else:
         tier = 2
+    if compact:
+        tier = min(2, tier + 1)
     logo_sub = (1, 2, 3)[tier]
     status_fs = (15, 15, 13)[tier]
     head_fs = (14, 14, 12)[tier]
@@ -2530,7 +2600,8 @@ def main():
         except Exception:
             pass
     if logo_img is not None:
-        tk.Label(root, image=logo_img, bg=BG_APP).pack(pady=(10, 0))
+        tk.Label(root, image=logo_img, bg=BG_APP).pack(
+            pady=(4, 0) if compact else (10, 0))
         root._logo_img = logo_img  # keep a reference alive
     else:
         tk.Label(root, text="WHAT PHONE IS THIS",
