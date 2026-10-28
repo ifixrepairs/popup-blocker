@@ -1,4 +1,4 @@
-"""WHAT PHONE IS THIS v1.12 — one-click phone identifier for the shop bench
+"""WHAT PHONE IS THIS v1.13 — one-click phone identifier for the shop bench
 (Python 3.10+, Windows-first, stdlib only).
 
 The problem: a phone comes in with a dead or unreadable screen, no IMEI
@@ -41,7 +41,7 @@ import wave
 import zipfile
 from dataclasses import dataclass, field
 
-VERSION = "1.12"
+VERSION = "1.13"
 
 SHOP = "iFixx Repairs"
 COPYRIGHT_LINE = "© 2026 iFixx Repairs. All rights reserved."
@@ -2525,6 +2525,143 @@ def clamp_window_position(x, y, win_w, win_h, screen_w, screen_h):
     return min(max(0, x), max_x), min(max(0, y), max_y)
 
 
+# ============================================================================
+# The face (v1.13) — owner law 2026-10-28: "get rid of everything here,
+# just leave the model number and the IMEI number and that's it." The
+# DEVICE INFORMATION panel carries exactly these two fields, and the
+# window is sized FROM the content so the face can never clip.
+# ============================================================================
+FACE_FIELDS = ("MODEL NUMBER", "IMEI")
+
+
+def face_tier(win_h, compact):
+    """Font/padding tier for the face: 0 roomy, 1 mid, 2 tight.
+
+    Keyed off the provisional window height (the fit_window_size
+    height, as in v1.10–v1.12); a compact screen drops one more tier.
+    """
+    if win_h >= 800:
+        tier = 0
+    elif win_h >= 640:
+        tier = 1
+    else:
+        tier = 2
+    if compact:
+        tier = min(2, tier + 1)
+    return tier
+
+
+def face_sizes(tier):
+    """Every font size and padding the face uses at this tier.
+
+    One table, shared by main() (which builds the widgets) and
+    face_content_height() (which measures the face) so the two can
+    never drift apart. Values are the v1.12 tier values, unchanged.
+    """
+    return {
+        "logo_sub": (1, 2, 3)[tier],
+        "status_fs": (15, 15, 13)[tier],
+        "head_fs": (14, 14, 12)[tier],
+        "head_pady": ((12, 8), (12, 8), (6, 2))[tier],
+        "cap_fs": (12, 12, 11)[tier],
+        "val_fs": (14, 14, 12)[tier],
+        "model_fs": (16, 16, 14)[tier],
+        "row_pady": (4, 2, 1)[tier],
+        "lbl_pady": (10, 6, 3)[tier],
+        "read_fs": (20, 20, 17)[tier],
+        "hint_fs": (13, 13, 11)[tier],
+        "upd_fs": (14, 14, 12)[tier],
+        "status_pady": ((2, 6), (2, 6), (0, 2))[tier],
+        "controls_pady": ((0, 6), (0, 6), (0, 2))[tier],
+        "button_pady": ((10, 4), (10, 4), (6, 2))[tier],
+        "upd_status_pady": ((8, 0), (8, 0), (4, 0))[tier],
+        "update_wrap_pady": ((2, 4), (2, 4), (1, 2))[tier],
+        "footer_pady": ((4, 10), (4, 10), (2, 4))[tier],
+    }
+
+
+def _line_px(font_pt):
+    """Conservative pixel height of one line of text at a Tk point
+    size (Segoe UI line spacing at 96 DPI is ~1.84x the point size;
+    1.9x plus a pixel keeps the estimate on the safe side)."""
+    return int(font_pt * 1.9) + 2
+
+
+def face_content_height(tier, compact, logo_h=215):
+    """Pixel height the whole face NEEDS at this tier: logo block,
+    status line, the two-field panel, and the bottom controls.
+
+    Every contribution mirrors the widgets main() actually packs.
+    The status line is counted at two lines (the tools-missing text
+    is two lines; the no-phone text can wrap at the narrow floor) so
+    the number is a worst case, not a hope. logo_h is the bundled
+    logo's pixel height (215); pass 0 when the image failed to load
+    and the fallback wordmark label is what shows.
+    """
+    s = face_sizes(tier)
+    total = 0
+    # Logo block (or the fallback wordmark when the image is missing).
+    if logo_h:
+        total += (logo_h + s["logo_sub"] - 1) // s["logo_sub"]
+        total += 4 if compact else 10
+    else:
+        total += _line_px(20) + 18
+    # Status line.
+    total += 2 * _line_px(s["status_fs"]) + sum(s["status_pady"])
+    # Panel: outer padding + border, the heading, the two rows.
+    total += 8 + 2
+    total += sum(s["head_pady"]) + max(20, _line_px(s["head_fs"]))
+    for value_fs in (s["model_fs"], s["val_fs"]):
+        caption_side = _line_px(s["cap_fs"]) + 2 * s["lbl_pady"]
+        value_side = _line_px(value_fs) + 20
+        total += max(caption_side, value_side) + 2 * s["row_pady"] + 2
+    # Bottom controls: frame padding, READ button, hint, update
+    # status, update button (plus its blue wrap), footer line.
+    total += s["controls_pady"][1]
+    total += _line_px(s["read_fs"]) + 16 + 4 + sum(s["button_pady"])
+    total += _line_px(s["hint_fs"])
+    total += _line_px(12) + s["upd_status_pady"][0]
+    total += (_line_px(s["upd_fs"]) + 12 + 4 + 4
+              + sum(s["update_wrap_pady"]))
+    total += _line_px(10) + sum(s["footer_pady"])
+    return total
+
+
+def content_window_size(screen_w, screen_h, req_h):
+    """Content-driven window size (v1.13): exactly as tall as the
+    face needs — the required height whenever the screen allows it,
+    capped at 92% of the screen height, floored at 420 unless the
+    92% cap itself is lower. Width keeps the v1.12 rule (94% of the
+    screen, 780 cap) with the floor lowered to 560, since the short
+    two-field face no longer needs the old 600."""
+    max_h = int(screen_h * 0.92)
+    h = max(min(420, max_h), min(req_h, max_h))
+    w = min(780, int(screen_w * 0.94))
+    w = max(min(560, screen_w), w)
+    return w, h
+
+
+def final_window_size(win_w, win_h, req_w, req_h, screen_w, screen_h):
+    """The FINAL window size: grown to the REAL laid-out widgets.
+
+    content_window_size() only sets the provisional size the window
+    opens with — face_content_height() is an estimate, and the boss
+    render probe (2026-10-28, Xvfb 1366x768, the real main()) caught
+    it ~52 px short, about one row: the estimate budgets the status
+    line at two lines, but the tools-missing banner that lands after
+    the first poll wraps to more, and the panel — the one expanding
+    frame — absorbed the squeeze and unmapped the IMEI row. So once
+    the face is built, Tk's own winfo_reqwidth()/winfo_reqheight()
+    are the truth: height = the current height or the measured
+    request, whichever is larger, capped at 92% of the screen height
+    (on a tiny screen the cap wins — prefer it, never crash); width
+    the same way, capped at the 780 design width.
+    """
+    new_h = min(max(win_h, req_h), int(screen_h * 0.92))
+    new_w = min(max(win_w, req_w), 780)
+    return new_w, new_h
+
+
 def main():
     import tkinter as tk
 
@@ -2553,46 +2690,50 @@ def main():
     root.configure(bg=BG_APP)
     screen_w = root.winfo_screenwidth()
     screen_h = root.winfo_screenheight()
-    win_w, win_h = fit_window_size(screen_w, screen_h)
-    win_x, win_y = clamp_window_position(
-        (screen_w - win_w) // 2, (screen_h - win_h) // 2,
-        win_w, win_h, screen_w, screen_h)
-    root.geometry(f"{win_w}x{win_h}+{win_x}+{win_y}")
-    root.minsize(600, 460)
 
     logo_img = None
     try:
         logo_img = tk.PhotoImage(data=LOGO_PNG_B64)
     except Exception:
         logo_img = None
+
     # Size tiers: the face shrinks in steps so EVERY row and button
     # stays visible even on a small screen (v1.10 first cut still
     # clipped rows at 706px tall — the tiers fix that by construction).
-    # v1.12: the window now caps at 860 tall, so the tiers key off the
-    # new heights; a compact screen (compact_layout) drops one more
-    # tier — tighter paddings, fonts one step smaller.
+    # v1.12: a compact screen (compact_layout) drops one more tier —
+    # tighter paddings, fonts one step smaller.
+    # v1.13: the tier is picked off the provisional fit_window_size
+    # height exactly as before, and the opening size comes from the
+    # face itself (face_content_height via content_window_size) —
+    # but that is only an estimate: once the face is built,
+    # enforce_content_fit() sets the FINAL size from Tk's measured
+    # winfo_reqheight()/winfo_reqwidth() (final_window_size), so no
+    # row can clip and no hand-stretching is ever needed.
     compact = compact_layout(screen_w, screen_h)
-    if win_h >= 800:
-        tier = 0
-    elif win_h >= 640:
-        tier = 1
-    else:
-        tier = 2
-    if compact:
-        tier = min(2, tier + 1)
-    logo_sub = (1, 2, 3)[tier]
-    status_fs = (15, 15, 13)[tier]
-    head_fs = (14, 14, 12)[tier]
-    head_pady = ((12, 8), (12, 8), (6, 2))[tier]
-    cap_fs = (12, 12, 11)[tier]
-    val_fs = (14, 14, 12)[tier]
-    model_fs = (16, 16, 14)[tier]
-    det_fs = (12, 12, 11)[tier]
-    row_pady = (4, 2, 1)[tier]
-    lbl_pady = (10, 6, 3)[tier]
-    read_fs = (20, 20, 17)[tier]
-    hint_fs = (13, 13, 11)[tier]
-    upd_fs = (14, 14, 12)[tier]
+    _prov_w, _prov_h = fit_window_size(screen_w, screen_h)
+    tier = face_tier(_prov_h, compact)
+    sizes = face_sizes(tier)
+    logo_h = logo_img.height() if logo_img is not None else 0
+    req_h = face_content_height(tier, compact, logo_h)
+    win_w, win_h = content_window_size(screen_w, screen_h, req_h)
+    win_x, win_y = clamp_window_position(
+        (screen_w - win_w) // 2, (screen_h - win_h) // 2,
+        win_w, win_h, screen_w, screen_h)
+    root.geometry(f"{win_w}x{win_h}+{win_x}+{win_y}")
+    root.minsize(560, 420)
+
+    logo_sub = sizes["logo_sub"]
+    status_fs = sizes["status_fs"]
+    head_fs = sizes["head_fs"]
+    head_pady = sizes["head_pady"]
+    cap_fs = sizes["cap_fs"]
+    val_fs = sizes["val_fs"]
+    model_fs = sizes["model_fs"]
+    row_pady = sizes["row_pady"]
+    lbl_pady = sizes["lbl_pady"]
+    read_fs = sizes["read_fs"]
+    hint_fs = sizes["hint_fs"]
+    upd_fs = sizes["upd_fs"]
 
     if logo_img is not None and logo_sub > 1:
         try:
@@ -2612,7 +2753,7 @@ def main():
                       font=("Segoe UI", status_fs, "bold"),
                       bg=BG_APP, fg=WARN, wraplength=max(300, win_w - 100),
                       justify="center")
-    status.pack(pady=(0, 2) if tier == 2 else (2, 6))
+    status.pack(pady=sizes["status_pady"])
 
     panel = tk.Frame(root, bg=BG_PANEL, highlightbackground="#294761",
                      highlightthickness=1, bd=0)
@@ -2640,34 +2781,26 @@ def main():
         value.pack(side="right", padx=(8, 14), pady=10)
         return value
 
-    model_value = make_row("MODEL")
-    model_value.config(font=("Segoe UI", model_fs, "bold"), fg="#FFC857",
-                       wraplength=max(180, win_w - 380), justify="right")
-    modelnum_value = make_row("MODEL NUMBER")
-    imei_value = make_row("IMEI")
-    serial_value = make_row("SERIAL")
-    battery_value = make_row("BATTERY")
-    details_value = make_row("DETAILS")
-    details_value.config(font=("Segoe UI", det_fs, "bold"),
-                         wraplength=max(180, win_w - 430),
-                         justify="right")
-
-    note = tk.Label(panel, text="", font=("Segoe UI", 12),
-                    bg=BG_PANEL, fg=FG_DIM, wraplength=max(300, win_w - 120),
-                    height=2,
-                    justify="center")
-    if tier < 2:
-        note.pack(pady=(2, 6))
+    # Owner law (v1.13): the panel shows MODEL NUMBER and IMEI —
+    # nothing else. The rows are built from FACE_FIELDS so the face
+    # and the law are the same list. The model number keeps the
+    # large gold treatment the MODEL row used to get.
+    row_values = {caption: make_row(caption) for caption in FACE_FIELDS}
+    modelnum_value = row_values["MODEL NUMBER"]
+    modelnum_value.config(font=("Segoe UI", model_fs, "bold"), fg="#FFC857",
+                          wraplength=max(180, win_w - 380),
+                          justify="right")
+    imei_value = row_values["IMEI"]
 
     controls = tk.Frame(root, bg=BG_APP)
-    controls.pack(side="bottom", fill="x", pady=(0, 2) if tier == 2 else (0, 6))
+    controls.pack(side="bottom", fill="x", pady=sizes["controls_pady"])
     panel.pack(fill="both", expand=True, padx=18, pady=4)
 
     button = tk.Button(controls, text="READ THE PHONE",
                        font=("Segoe UI", read_fs, "bold"), width=22,
                        bg=GOLD, fg="#0B141D", activebackground="#F2C14E",
                        relief="flat", padx=26, pady=8, cursor="hand2")
-    button.pack(pady=(6, 2) if tier == 2 else (10, 4))
+    button.pack(pady=sizes["button_pady"])
 
     hint = tk.Label(controls, text=FASTBOOT_HINT, font=("Segoe UI", hint_fs, "bold"),
                     bg=BG_APP, fg=ACCENT)
@@ -2676,9 +2809,9 @@ def main():
     update_status = tk.Label(controls, text="",
                              font=("Segoe UI", 12, "bold"),
                              bg=BG_APP, fg=GOLD)
-    update_status.pack(pady=(4, 0) if tier == 2 else (8, 0))
+    update_status.pack(pady=sizes["upd_status_pady"])
     update_wrap = tk.Frame(controls, bg="#168DE2")
-    update_wrap.pack(pady=(1, 2) if tier == 2 else (2, 4))
+    update_wrap.pack(pady=sizes["update_wrap_pady"])
     update_btn = tk.Button(update_wrap, text="CHECK FOR UPDATES",
                            font=("Segoe UI", upd_fs, "bold"), width=22,
                            bg="#16334E", fg=FG_TEXT,
@@ -2687,7 +2820,32 @@ def main():
     update_btn.pack(padx=2, pady=2)
     tk.Label(controls, text=f"{PRIVACY_LINE}  {COPYRIGHT_LINE}",
              font=("Segoe UI", 10), bg=BG_APP, fg=FG_DIM).pack(
-                 pady=(2, 4) if tier == 2 else (4, 10))
+                 pady=sizes["footer_pady"])
+
+    def enforce_content_fit():
+        """Grow the window to the REAL face, measured by Tk itself.
+
+        The provisional size comes from the face_content_height
+        estimate, which cannot know the true need (font metrics, a
+        status banner that wraps to more lines than the estimate
+        counted once a real read lands). Measuring the laid-out
+        widgets after update_idletasks() and growing to
+        winfo_reqheight()/winfo_reqwidth() — capped by
+        final_window_size — is what keeps every row mapped. Runs
+        once at startup and again after every show_result(), since
+        that is the moment new content lands in the face.
+        """
+        nonlocal win_w, win_h, win_x, win_y
+        root.update_idletasks()
+        new_w, new_h = final_window_size(
+            win_w, win_h, root.winfo_reqwidth(), root.winfo_reqheight(),
+            screen_w, screen_h)
+        if (new_w, new_h) != (win_w, win_h):
+            win_w, win_h = new_w, new_h
+            win_x, win_y = clamp_window_position(
+                (screen_w - win_w) // 2, (screen_h - win_h) // 2,
+                win_w, win_h, screen_w, screen_h)
+            root.geometry(f"{win_w}x{win_h}+{win_x}+{win_y}")
 
     def show_result(result, from_manual=False):
         if result.status == "tools_missing":
@@ -2697,65 +2855,23 @@ def main():
                 status.config(text=TOOLS_FAILED_TEXT, fg=WARN)
             else:
                 status.config(text=TOOLS_MISSING_TEXT, fg=WARN)
-            model_value.config(text="—")
-            imei_value.config(text="—")
-            serial_value.config(text="—")
-            details_value.config(text="—")
             modelnum_value.config(text="—")
-            battery_value.config(text="—")
-            note.config(text="")
+            imei_value.config(text="—")
+            enforce_content_fit()
             return
         if result.info is None:
             status.config(text=NO_PHONE_TEXT, fg=WARN)
-            model_value.config(text="—")
-            imei_value.config(text="—")
-            serial_value.config(text="—")
-            details_value.config(text="—")
             modelnum_value.config(text="—")
-            battery_value.config(text="—")
-            note.config(text="")
+            imei_value.config(text="—")
+            enforce_content_fit()
             return
         info = result.info
-        if info.battery_level >= 0:
-            seg = f"{info.battery_level}%"
-            if info.battery_health:
-                seg += f" ({info.battery_health})"
-            if info.battery_cycles >= 0:
-                seg += f" · {info.battery_cycles} cycles"
-            battery_value.config(text=seg)
-        elif info.battery_volts:
-            battery_value.config(text=f"{info.battery_volts:.1f} V")
-        else:
-            battery_value.config(text="—")
-        det = []
-        if info.android_version:
-            det.append(f"Android {info.android_version}")
-        if info.storage_gb:
-            det.append(f"Storage {storage_tier(info.storage_gb)} GB")
-        if info.ram_gb:
-            det.append(f"RAM {ram_tier(info.ram_gb)} GB")
-        details_value.config(text="  ·  ".join(det) if det else "—")
         via = {"fastboot": "fastboot mode", "iphone": "USB (iPhone)"}.get(
             info.source, "USB (adb)")
         status.config(text=f"Phone found — read by {via}", fg=GOOD)
-        model_value.config(text=info.model_display)
         modelnum_value.config(text=info.model_number or "—")
         imei_value.config(text=group_digits(info.imei) if info.imei else "—")
-        serial_value.config(text=info.serial or "—")
-        bits = []
-        if info.frp_warning:
-            bits.append("⚠ ACCOUNT-LOCK WARNING — this phone's setup "
-                        "was never finished; check for an account "
-                        "lock before buying.")
-        if not info.known_name and info.codename:
-            bits.append(f"Code name “{info.codename}” — not in the name "
-                        f"table yet (see RUNBOOK to add it).")
-        if info.source == "adb" and info.codename:
-            bits.append(f"Code name: {info.codename}")
-        if result.multiple:
-            bits.append("Two or more phones are plugged in — "
-                        "showing the first one.")
-        note.config(text="  ".join(bits))
+        enforce_content_fit()
 
     def run_check(manual):
         if busy["flag"]:
@@ -2911,6 +3027,13 @@ def main():
         except queue.Empty:
             pass
         root.after(400, drain_heal)
+
+    # Content-driven fit, enforced with Tk's own measurements of the
+    # real laid-out face (see enforce_content_fit above — it also
+    # re-runs after every show_result, when the status banner and the
+    # read values land and the true height settles). The face cannot
+    # clip at the size it opens.
+    enforce_content_fit()
 
     root.after(500, drain_updates)
     root.after(2500, lambda: run_update_check(manual=False))
