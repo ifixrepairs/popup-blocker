@@ -3,5 +3,12 @@
   "url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/pc/PrintMyTexts-PC-v1.5.pyw",
   "sha256": "0bc1132b93bf60ae8c602918643f2fe6e581de8e89aa0a6d37b3db7cd87a84ed",
   "size": 92151,
-  "notes": "New professional face, plain and clean like AdTrapper. Opens at a normal size and remembers the size you leave it. UPDATE button at the bottom of the side bar."
+  "notes": "New professional face, plain and clean like AdTrapper. Opens at a normal size and remembers the size you leave it. UPDATE button at the bottom of the side bar.",
+  "android": {
+    "version": "1.5.1",
+    "url": "https://github.com/ifixrepairs/popup-blocker/releases/download/pmt-android-1.5.1/PrintMyTexts-Android-v1.5.1.apk",
+    "sha256": "77b480de29ae0744e75fa52459ec54c6cb4ce120880d1a3af0209ed64238b22b",
+    "size": 61243206,
+    "notes": "New: a big Check for updates button right on the home screen. Same permanent key - installs right over the top."
+  }
 }
