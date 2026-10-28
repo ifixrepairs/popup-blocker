@@ -1,4 +1,4 @@
-"""WHAT PHONE IS THIS v1.6 — one-click phone identifier for the shop bench
+"""WHAT PHONE IS THIS v1.7 — one-click phone identifier for the shop bench
 (Python 3.10+, Windows-first, stdlib only).
 
 The problem: a phone comes in with a dead or unreadable screen, no IMEI
@@ -39,7 +39,7 @@ import urllib.request
 import wave
 from dataclasses import dataclass, field
 
-VERSION = "1.6"
+VERSION = "1.7"
 
 SHOP = "iFixx Repairs"
 COPYRIGHT_LINE = "© 2026 iFixx Repairs. All rights reserved."
@@ -117,6 +117,8 @@ MOTO_CODENAMES = {
     "rhode":   "Moto G52 (2022)",                   # med — firmware listings
     # --- 2023 era -----------------------------------------------------------
     "pnangn":  "Moto G 5G 2023 (XT2313)",           # high — RabbitEars KB codename record + owner's live fastboot read 2026-10-27 (IMEI/serial read in the same pass)
+    # --- 2024 era -----------------------------------------------------------
+    "fogona":  "Moto G 5G 2024 (XT2413)",           # high — firmware file XT2413V_FOGONA_TRACFONE + XDA fogo-family record + owner's live fastboot read 2026-10-28 (XT2413V, IMEI/serial/volts read in the same pass)
 }
 
 
