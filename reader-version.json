@@ -1,6 +1,7 @@
 {
-  "version": "1.10",
+  "version": "1.11",
   "pyw_url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/reader/WhatPhoneIsThis.pyw",
-  "pyw_md5": "864b4a5e0f2368aa998143679b7b8007",
-  "notes": "Window-fit fix (owner video 2026-10-28: v1.9 opened bigger than his bench screen): the window now sizes itself to the screen it opens on, Windows display scaling is handled, and the face shrinks in steps on small screens so every row and button stays visible."
+  "pyw_md5": "49fa1995be2555a9cedb6e0197839540",
+  "tools_md5": "1f03385b4605b72ff299c1674227ee85",
+  "notes": "Self-healing phone tools (owner field case 2026-10-28: a copy on the counter PC sat in a folder with no adb/fastboot and could never read a phone): a Windows copy that finds neither tool now downloads the tools pack from the shelf by itself, MD5-checked, and the window position is clamped so the whole window always opens on screen."
 }

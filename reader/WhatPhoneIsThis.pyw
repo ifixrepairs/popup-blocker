@@ -1,4 +1,4 @@
-"""WHAT PHONE IS THIS v1.10 — one-click phone identifier for the shop bench
+"""WHAT PHONE IS THIS v1.11 — one-click phone identifier for the shop bench
 (Python 3.10+, Windows-first, stdlib only).
 
 The problem: a phone comes in with a dead or unreadable screen, no IMEI
@@ -21,6 +21,7 @@ from __future__ import annotations
 
 import array
 import hashlib
+import io
 import json
 import math
 import os
@@ -37,9 +38,10 @@ import tempfile
 import threading
 import urllib.request
 import wave
+import zipfile
 from dataclasses import dataclass, field
 
-VERSION = "1.10"
+VERSION = "1.11"
 
 SHOP = "iFixx Repairs"
 COPYRIGHT_LINE = "© 2026 iFixx Repairs. All rights reserved."
@@ -198,23 +200,51 @@ def script_dir():
         return os.getcwd()
 
 
+def is_windows(system=None):
+    """Platform seam: True when running on Windows.
+
+    Every Windows-only behavior keys off this one small function so
+    the tests can stub the platform instead of the machine.
+    """
+    return (system if system is not None else platform.system()) == "Windows"
+
+
+def fallback_tools_dir(env=None, system=None):
+    """Where self-healed tools live when the app folder is not
+    writable: %LOCALAPPDATA%\\WhatPhoneIsThis\\tools on Windows.
+    None anywhere else (the heal is a Windows-only road)."""
+    if not is_windows(system):
+        return None
+    env = os.environ if env is None else env
+    base = env.get("LOCALAPPDATA")
+    if not base:
+        base = os.path.join(os.path.expanduser("~"), "AppData", "Local")
+    return os.path.join(base, "WhatPhoneIsThis", "tools")
+
+
 def find_tool(name, tool_dir=None, which=shutil.which):
-    """Locate a platform-tools binary: PATH first, then beside the script.
+    """Locate a platform-tools binary: PATH first, then beside the
+    script, then the self-healed tools folder (v1.11).
 
     Returns the full path, or None when not found anywhere.
     """
     found = which(name)
     if found:
         return found
-    folder = tool_dir if tool_dir is not None else script_dir()
-    exe = name + ".exe" if platform.system() == "Windows" else name
-    candidate = os.path.join(folder, exe)
-    if os.path.isfile(candidate):
-        return candidate
-    if exe != name:
-        candidate = os.path.join(folder, name)
+    folders = [tool_dir if tool_dir is not None else script_dir()]
+    if tool_dir is None:
+        healed = fallback_tools_dir()
+        if healed:
+            folders.append(healed)
+    exe = name + ".exe" if is_windows() else name
+    for folder in folders:
+        candidate = os.path.join(folder, exe)
         if os.path.isfile(candidate):
             return candidate
+        if exe != name:
+            candidate = os.path.join(folder, name)
+            if os.path.isfile(candidate):
+                return candidate
     return None
 
 
@@ -1996,6 +2026,105 @@ def apply_update(manifest, target=None, fetcher=None):
         return False
 
 
+# ============================================================================
+# Self-healing phone tools (v1.11) — a Windows copy whose folder lacks
+# adb.exe / fastboot.exe used to be a dead reader: the tools-missing
+# banner showed and it could never read a phone (the counter-PC field
+# case, 2026-10-28: the live copy sat in a tool-less folder). Now the
+# copy fetches the tools itself. The five Windows platform-tools files
+# ride as a zip on the shop Drive shelf (a binary cannot ride the
+# text-only GitHub shelf), MD5-pinned in the manifest as tools_md5,
+# verified exactly like the payload's own pyw_md5 — a wrong or
+# HTML-error download fails the MD5 check and is never unpacked.
+# Windows only, only when BOTH tools are missing, always in a
+# background thread — the UI never waits on it.
+# ============================================================================
+TOOLS_PACK_URL = ("https://drive.usercontent.google.com/download"
+                  "?id=1-PvvzpAfoiUXNfQI_CHhwthycPMs6pCf"
+                  "&export=download&confirm=t")
+TOOL_FILES = ("adb.exe", "fastboot.exe", "AdbWinApi.dll",
+              "AdbWinUsbApi.dll", "libwinpthread-1.dll")
+TOOLS_GETTING_TEXT = "Getting the phone tools…"
+TOOLS_READY_TEXT = "Phone tools are ready — plug a phone in."
+TOOLS_FAILED_TEXT = ("The phone tools could not be fetched — check "
+                     "the internet, then close and reopen the reader.")
+
+
+def tools_missing(tool_dir=None, which=shutil.which):
+    """True when NEITHER fastboot nor adb can be found anywhere."""
+    return (find_tool("fastboot", tool_dir=tool_dir, which=which) is None
+            and find_tool("adb", tool_dir=tool_dir, which=which) is None)
+
+
+def needs_tools_heal(system=None, tool_dir=None, which=shutil.which):
+    """The heal decision: Windows, and both phone tools missing.
+
+    Never true on macOS/Linux (their tools ride inside the bundle),
+    and never true once any one tool can be found.
+    """
+    return is_windows(system) and tools_missing(tool_dir=tool_dir,
+                                                which=which)
+
+
+def _dir_writable(folder):
+    """Probe a folder for writability by really writing in it."""
+    try:
+        os.makedirs(folder, exist_ok=True)
+        probe = os.path.join(folder, ".wpit-write-test")
+        with open(probe, "wb") as fh:
+            fh.write(b"")
+        os.remove(probe)
+        return True
+    except Exception:
+        return False
+
+
+def choose_tools_dir(app_dir=None, writable=None, env=None, system=None):
+    """Where the healed tools go: beside the .pyw when that folder is
+    writable, else the %LOCALAPPDATA% fallback find_tool also checks.
+    Returns None when neither road exists (not Windows)."""
+    folder = app_dir if app_dir is not None else script_dir()
+    if (writable or _dir_writable)(folder):
+        return folder
+    return fallback_tools_dir(env=env, system=system)
+
+
+def heal_tools(manifest=None, fetcher=None, app_dir=None, writable=None,
+               env=None, system=None):
+    """Download the shelf tools pack, MD5-verify it against the
+    manifest's tools_md5, and unpack the five tool files (only those
+    five names — anything else in the pack is ignored). True only
+    when all five land on disk. Never raises: any failure is False,
+    and the caller keeps the tools-missing banner.
+    """
+    try:
+        manifest = manifest or fetch_update_manifest(fetcher=fetcher)
+        want = str((manifest or {}).get("tools_md5") or "").lower()
+        if not want:
+            return False
+        data = (fetcher or _fetch_bytes)(TOOLS_PACK_URL, timeout=60)
+        if hashlib.md5(data).hexdigest() != want:
+            return False
+        dest = choose_tools_dir(app_dir=app_dir, writable=writable,
+                                env=env, system=system)
+        if not dest:
+            return False
+        os.makedirs(dest, exist_ok=True)
+        written = 0
+        with zipfile.ZipFile(io.BytesIO(data)) as zf:
+            for info in zf.infolist():
+                base = os.path.basename(info.filename)
+                if info.is_dir() or base not in TOOL_FILES:
+                    continue
+                with zf.open(info) as src, open(
+                        os.path.join(dest, base), "wb") as out:
+                    shutil.copyfileobj(src, out)
+                written += 1
+        return written == len(TOOL_FILES)
+    except Exception:
+        return False
+
+
 def sanitize_for_powershell(text):
     """Make `text` safe to embed in a PowerShell single-quoted string."""
     return (str(text).replace("'", " ").replace('"', " ")
@@ -2317,12 +2446,30 @@ def fit_window_size(screen_w, screen_h):
     return max(640, w), max(520, h)
 
 
+def clamp_window_position(x, y, win_w, win_h, screen_w, screen_h):
+    """Pull a window position back so the WHOLE window is on screen.
+
+    v1.11: v1.10 sized the window to fit the screen, but a window can
+    still OPEN partly off-screen — a cascade or a second window
+    opening low leaves rows or buttons past the edge. The position
+    clamps into [0, screen - window] on both axes; a window bigger
+    than the screen pins to 0. A position already inside is returned
+    untouched, so the centered default stays centered.
+    """
+    max_x = max(0, screen_w - win_w)
+    max_y = max(0, screen_h - win_h)
+    return min(max(0, x), max_x), min(max(0, y), max_y)
+
+
 def main():
     import tkinter as tk
 
     watcher = PhoneWatcher()
     results = queue.Queue()
     busy = {"flag": False}
+    # Self-healing tools (v1.11): idle | getting | ready | failed.
+    heal = {"state": "idle"}
+    heal_q = queue.Queue()
 
     if os.name == "nt":
         # Windows display scaling must not blow the window up past the
@@ -2343,9 +2490,10 @@ def main():
     screen_w = root.winfo_screenwidth()
     screen_h = root.winfo_screenheight()
     win_w, win_h = fit_window_size(screen_w, screen_h)
-    root.geometry(f"{win_w}x{win_h}"
-                  f"+{max(0, (screen_w - win_w) // 2)}"
-                  f"+{max(0, (screen_h - win_h) // 2)}")
+    win_x, win_y = clamp_window_position(
+        (screen_w - win_w) // 2, (screen_h - win_h) // 2,
+        win_w, win_h, screen_w, screen_h)
+    root.geometry(f"{win_w}x{win_h}+{win_x}+{win_y}")
     root.minsize(640, 520)
 
     logo_img = None
@@ -2472,7 +2620,12 @@ def main():
 
     def show_result(result, from_manual=False):
         if result.status == "tools_missing":
-            status.config(text=TOOLS_MISSING_TEXT, fg=WARN)
+            if heal["state"] == "getting":
+                status.config(text=TOOLS_GETTING_TEXT, fg=ACCENT)
+            elif heal["state"] == "failed":
+                status.config(text=TOOLS_FAILED_TEXT, fg=WARN)
+            else:
+                status.config(text=TOOLS_MISSING_TEXT, fg=WARN)
             model_value.config(text="—")
             imei_value.config(text="—")
             serial_value.config(text="—")
@@ -2657,9 +2810,42 @@ def main():
         root.after(400, drain_updates)
 
     update_btn.config(command=on_update_button)
+
+    def run_tools_heal():
+        """Startup, Windows only, tools missing: fetch them in the
+        background and say so in plain words on the status line."""
+        if heal["state"] != "idle" or not needs_tools_heal():
+            return
+        heal["state"] = "getting"
+        status.config(text=TOOLS_GETTING_TEXT, fg=ACCENT)
+
+        def work():
+            heal_q.put(heal_tools())
+
+        threading.Thread(target=work, daemon=True).start()
+
+    def drain_heal():
+        try:
+            while True:
+                ok = heal_q.get_nowait()
+                if ok:
+                    heal["state"] = "ready"
+                    status.config(text=TOOLS_READY_TEXT, fg=GOOD)
+                    # Re-run the tools check with the tools in place:
+                    # the banner clears and phone watching takes over.
+                    run_check(manual=False)
+                else:
+                    heal["state"] = "failed"
+                    status.config(text=TOOLS_FAILED_TEXT, fg=WARN)
+        except queue.Empty:
+            pass
+        root.after(400, drain_heal)
+
     root.after(500, drain_updates)
     root.after(2500, lambda: run_update_check(manual=False))
     root.after(300, drain)
+    root.after(500, drain_heal)
+    root.after(800, run_tools_heal)
     root.after(600, poll)
     root.mainloop()
 
