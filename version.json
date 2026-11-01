@@ -1,9 +1,9 @@
 {
-  "versionCode": 2116,
-  "versionName": "11.9.6",
-  "apkUrl": "https://drive.usercontent.google.com/download?id=1uXUSDnvGhQwrhHDszd78sSaIGvXfu3Xv&export=download&confirm=t",
+  "versionCode": 2117,
+  "versionName": "11.9.7",
+  "apkUrl": "https://drive.usercontent.google.com/download?id=1JQB3VGAvGwQsxKo2FDF539nxBHH3plCh&export=download&confirm=t",
   "apkSize": 51375705,
-  "apkMd5": "71cee2bddb61db8d412ac72a2cfdde43",
-  "apkSha256": "62dc1255eaf9cadca6c4ed90b431b0d8b72ed4628f0314612dd6450e870892a2",
-  "notes": "Your staff PIN lock is back: See all apps now asks for the staff PIN first, just like you set it. Also carries the freeze fix — checking a download can no longer lock the app up. Tap Check for updates to get it."
+  "apkMd5": "d6bb884b6442921fa0870f890bcdce0f",
+  "apkSha256": "fc4189d88be3ba652893be81eecef490b1854d25c6e438ce1069d9d5adbc922c",
+  "notes": "Carrier Shield is in: the real apps from T-Mobile, Metro, Verizon, AT&T, Cricket, Boost, Visible, Spectrum, Xfinity and the other carriers are protected now -- and so are the big security names, AVG, Avast and Norton. Real apps that only LOOK like suspects stay safe and say KEEP, with their evidence still shown. Genuine bad apps still convict exactly as before, and the blocklist still beats everything. Tap Check for updates to get it."
 }
