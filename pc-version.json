@@ -1,15 +1,1 @@
-{
-  "extras": [
-    {
-      "name": "dwebp.exe",
-      "sha256": "17c1488bf84b7834e9aa908bb40afd0be2e55d57567d210e96336c56bb6ae993",
-      "size": 512512,
-      "url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/extras/dwebp.exe"
-    }
-  ],
-  "notes": "CARRIER SHIELD + GUARD 3 (owner rulings 2026-10-31 / 2026-11-01). (1) Eighteen real carrier apps (T-Life, T-Mobile Play, myMetro, MetroPlay, My Verizon, myAT&T, myCricket, Boost, Visible, Spectrum, Xfinity, UScellular, Google Fi, Straight Talk, Total Wireless, TracFone, Consumer Cellular, Mint Mobile) join the known-legit guard: they verdict KEEP and can no longer be convicted by ad evidence or the ad-network census; the evidence lines still show. (2) The guard now stands AHEAD of the 4-network census bar -- a guarded app is never convicted by stuffed ad networks alone. The human-confirmed blocklist still beats the guard, and an unguarded app at 4 networks still convicts exactly as before. (3) The 2026-10-28 guard adds are wired in at last: Wells Fargo, Yahoo Mail, OfferUp, Allegiant, and Zillow joins the computer guard for phone parity. (4) Guard 3: AVG Cleaner, Avast Cleanup and Norton Cleaner join the guard like CCleaner. (5) AVG AntiVirus & Security (com.antivirus) joins the guard on the owner's ruling -- KEEP, evidence still shown. Same face, same verdict law otherwise: ad software alone still convicts, factory apps still cap at ASK FIRST, 92-row fake-keyword table, disclaimer v3.1. Twin of the Mac 11.13 build flipped the same day; phone goes to 11.9.7 in the same motion.",
-  "sha256": "23e507bb91406d89a631354e0dff6d87048a759dbd9fb4324c5ff3b4d920acf3",
-  "size": 1048362,
-  "url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/pc/AdTrapper-PC-v11.13-mirror.pyw",
-  "version": "11.13"
-}
+{"extras":[{"name":"dwebp.exe","sha256":"17c1488bf84b7834e9aa908bb40afd0be2e55d57567d210e96336c56bb6ae993","size":512512,"url":"https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/extras/dwebp.exe"}],"notes":"PASTEL SETTINGS + FRONT (owner order 2026-11-04). Colors only -- two places. (1) The Settings window: white panel, dark words, and one soft pastel per button in the Shop Fax palette the owner picked from his fax app -- UPDATE PROGRAM light blue, UPDATE THREAT LIST mint green, USB GUIDE cream, REPORT DETAILS soft pink, DISCLAIMER lavender, REMOVAL HISTORY rose; CLOSE stays the strong AdTrapper blue so the way out stands out. (2) The main face, from the owner's own photo of it: Scan Phone light blue, Guided Clean cream, Print Report mint green, the rail's selected view washed light blue, and the Settings door at the foot of the rail lavender -- dark bold words on all of them. The verdict pills, the warning text, Add to remove list, Remove selected and Undo keep their exact strong colors. Same buttons, same words, same order, same behavior. Verdict engine, Carrier Shield + Guard 3 guard (54 ids incl. AVG AntiVirus as KEEP with evidence shown), threat feed and disclaimer v3.1 are identical to 11.13. Twin of the Mac 11.14 build; phone goes to 11.9.8 in the same motion.","sha256":"2974d21c95365688018a776b364f498232614be7f909361294133551e1eae9e9","size":1049586,"url":"https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/pc/AdTrapper-PC-v11.14-mirror.pyw","version":"11.14"}
