@@ -1,9 +1,9 @@
 {
-  "versionCode": 4120,
-  "versionName": "11.9.10",
-  "apkUrl": "https://drive.usercontent.google.com/download?id=16m-k1KDbbI6udaU4wn8YnMUTnclmQhW-&export=download&confirm=t",
+  "versionCode": 4121,
+  "versionName": "11.9.11",
+  "apkUrl": "https://drive.usercontent.google.com/download?id=1G0O6qRENjSWzw3gbTs-cA9qLb_dO1m44&export=download&confirm=t",
   "apkSize": 18680215,
-  "apkMd5": "4d452985d8312605456f4fb58d750dee",
-  "apkSha256": "3315b9f1d75d5a359f2b553d653fdafe841af3ed83103a2944ba0df2c4134f59",
-  "notes": "Select All comes to All Applications: one tap shields the whole list at once — the smart way to baseline a brand-new phone. A known-bad app can never be shielded, and already-shielded apps are left exactly as they were. The front buttons also get breathing room: SCAN, How it works, Check for updates and Settings are spaced out. Nothing else moves: same verdicts, same colors, same threat list. Tap Check for updates to get it."
+  "apkMd5": "c462a26620f9b237e9d5b7a769191468",
+  "apkSha256": "d37079b2dd6dbe83a55f9a1d27e364b8e2c5990735166a623e5bc2df807b949e",
+  "notes": "Unshield is here: if an app ever lands on the shop shield by mistake, you can take it back off — the full shielded list lives in Settings under Shop shield, and the app detail page has an Unshield button too. Shield selected now asks first and tells you exactly how many apps it will shield, so one wrong tap can't shield a batch in silence. A known-bad app still can never be shielded. Nothing else moves: same verdicts, same colors, same threat list. Tap Check for updates to get it."
 }
