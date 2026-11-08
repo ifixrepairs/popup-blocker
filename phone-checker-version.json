@@ -1,0 +1,7 @@
+{
+  "version": "2.1",
+  "url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/pc/PhoneChecker-PC-v2.1.pyw",
+  "sha256": "76b2c6d4bdf0b380fd149a98475803c9b3f03ebc2fd77813b48514a29c09e53b",
+  "size": 194224,
+  "notes": "The Phone Checker now has its own CHECK FOR UPDATES button - this is the first update it can fetch by itself. Same checker, same results; from here on, new versions arrive through the button."
+}
