@@ -1,7 +1,7 @@
 {
-  "version": "1.14",
+  "version": "1.15",
   "pyw_url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/reader/WhatPhoneIsThis.pyw",
-  "pyw_md5": "4fe7616445dea58d74ef417e5f55fac4",
+  "pyw_md5": "5287f6699ad47e0c60c2f77f0604d234",
   "tools_md5": "1f03385b4605b72ff299c1674227ee85",
-  "notes": "Mac fix: the CHECK FOR UPDATES button was unreadable on macOS (owner's field photo 2026-10-28, 'Can't read white') - Aqua renders its own pale button face but takes our white text. update_button_colors() now gives the Mac dark text (#0B141D, same as READ THE PHONE) in both idle and update-available states; Windows/Linux design unchanged. Carries the v1.13 two-field face (MODEL NUMBER + IMEI only), the v1.12 three-road updater and the v1.11 tools self-heal."
+  "notes": "Three fixes from the three-bot gate (2026-11-08): (1) the spoken serial number now speaks its letters (ZY22ABC123 is read out in full - before, the letters were dropped and only the digits were spoken); (2) when two phones are plugged in, the screen now says so and names that the first one is being shown; (3) the update door now refuses any update whose fingerprint is missing from the manifest instead of installing it unchecked. Face unchanged: MODEL NUMBER + IMEI only. Carries the v1.14 readable CHECK FOR UPDATES button, the v1.13 two-field face, the v1.12 three-road updater and the v1.11 tools self-heal."
 }
