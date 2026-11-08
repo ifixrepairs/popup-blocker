@@ -1,14 +1,14 @@
 {
-  "version": "1.5",
-  "url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/pc/PrintMyTexts-PC-v1.5.pyw",
-  "sha256": "0bc1132b93bf60ae8c602918643f2fe6e581de8e89aa0a6d37b3db7cd87a84ed",
-  "size": 92151,
-  "notes": "New professional face, plain and clean like AdTrapper. Opens at a normal size and remembers the size you leave it. UPDATE button at the bottom of the side bar.",
+  "version": "1.7",
+  "url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/pc/PrintMyTexts-PC-v1.7.pyw",
+  "sha256": "23832d695ad37a87c417357cb8cf1f494d6de0d50599529e52b65f399977e849",
+  "size": 128384,
+  "notes": "PrintMyTexts 1.7: the side buttons are now big colored buttons with symbols, like the picture. Home and Message Transcript tabs are gone - importing lands right on the messages. New: print all conversations at once, quick date choices, search, page count before printing, and save a plain text file beside the PDF. Printed pages carry no shop letterhead; messages print as bubbles.",
   "android": {
-    "version": "1.5.1",
-    "url": "https://github.com/ifixrepairs/popup-blocker/releases/download/pmt-android-1.5.1/PrintMyTexts-Android-v1.5.1.apk",
-    "sha256": "77b480de29ae0744e75fa52459ec54c6cb4ce120880d1a3af0209ed64238b22b",
-    "size": 61243206,
-    "notes": "New: a big Check for updates button right on the home screen. Same permanent key - installs right over the top."
+    "version": "1.7.0",
+    "url": "https://github.com/ifixrepairs/popup-blocker/releases/download/pmt-android-1.7.0/PrintMyTexts-Android-v1.7.0.apk",
+    "sha256": "ebdd45e3a6f0f56aa4fc323a2ac1c23f9caf6feb9d78dabf0c5e2d3ccdc2f2db",
+    "size": 61652806,
+    "notes": "PrintMyTexts 1.7: the home doors are now big colored buttons with symbols, like the picture, and the extra Home and Message Transcript doors are gone - importing lands right on the messages. New: print several conversations at once, quick date choices, search, page count before printing, and share a plain text file beside the PDF. Printed pages carry no shop letterhead; messages print as bubbles. Same permanent key - installs right over the top. Update with the big Check for updates button on the home screen."
   }
 }
