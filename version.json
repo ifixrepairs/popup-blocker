@@ -1,9 +1,9 @@
 {
-  "versionCode": 4121,
-  "versionName": "11.9.11",
-  "apkUrl": "https://drive.usercontent.google.com/download?id=1G0O6qRENjSWzw3gbTs-cA9qLb_dO1m44&export=download&confirm=t",
-  "apkSize": 18680215,
-  "apkMd5": "c462a26620f9b237e9d5b7a769191468",
-  "apkSha256": "d37079b2dd6dbe83a55f9a1d27e364b8e2c5990735166a623e5bc2df807b949e",
-  "notes": "Unshield is here: if an app ever lands on the shop shield by mistake, you can take it back off — the full shielded list lives in Settings under Shop shield, and the app detail page has an Unshield button too. Shield selected now asks first and tells you exactly how many apps it will shield, so one wrong tap can't shield a batch in silence. A known-bad app still can never be shielded. Nothing else moves: same verdicts, same colors, same threat list. Tap Check for updates to get it."
+  "versionCode": 4122,
+  "versionName": "11.9.12",
+  "apkUrl": "https://drive.usercontent.google.com/download?id=1A-or9CQyoxL5Y5B8qPAK_OtVbumfLiFu&export=download&confirm=t",
+  "apkSize": 18921927,
+  "apkMd5": "59066d8950d21da78520a282aae02c6b",
+  "apkSha256": "16639a36ba7f4ad9de77505fc1dcbb8eed65c89ed2961c09482b91a3f273861e",
+  "notes": "Fixes from the full three-bot check. Background Check now catches fake cleaner, booster and security costumes on its own evidence, the way the scan already did. A saved check result can no longer flip a factory app to Remove or wipe one out \u2014 factory apps stay Ask First. The scan results list no longer shows row numbers. Same verdicts, same colors, same threat list. Tap Check for updates to get it."
 }
