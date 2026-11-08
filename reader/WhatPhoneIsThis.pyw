@@ -41,7 +41,7 @@ import wave
 import zipfile
 from dataclasses import dataclass, field
 
-VERSION = "1.14"
+VERSION = "1.15"
 
 SHOP = "iFixx Repairs"
 COPYRIGHT_LINE = "© 2026 iFixx Repairs. All rights reserved."
@@ -920,7 +920,11 @@ def build_speech_text(info):
     if info.imei:
         text += f" IMEI: {group_digits(info.imei)}."
     if info.serial:
-        text += f" Serial number: {group_digits(info.serial, 4)}."
+        # v1.15: spelled like the model number, NOT group_digits —
+        # group_digits strips non-digits, so ZY22ABC123 was spoken
+        # as "2212 3" and FB999 as "999". A tech writing the serial
+        # down from the voice got a wrong serial.
+        text += f" Serial number: {speak_model_number(info.serial)}."
     if info.android_version:
         text += f" Android {info.android_version}."
     if info.battery_level >= 0:
@@ -2053,6 +2057,13 @@ def apply_update(manifest, target=None, fetcher=None):
     """
     fetch = fetcher or _fetch_bytes
     want = str(manifest.get("pyw_md5") or "").lower()
+    if not want:
+        # v1.15: a manifest carrying no pyw_md5 pins nothing, so
+        # refuse — the same discipline heal_tools applies to a
+        # missing tools_md5. Before this the check below was
+        # conditional (`if want and ...`), and an MD5-less manifest
+        # installed its payload with no verification at all.
+        return False
     data = None
     for road in payload_roads(manifest):
         try:
@@ -2422,6 +2433,7 @@ class PollResult:
     status: str = "none"         # new | current | none | tools_missing
     info: PhoneInfo | None = None
     multiple: bool = False
+    count: int = 0               # phones seen by the winning door (v1.15)
 
 
 class PhoneWatcher:
@@ -2469,9 +2481,11 @@ class PhoneWatcher:
                     self.speaker(build_speech_text(info))
                 except Exception:
                     pass  # speech must never block the display
-            return PollResult(status="new", info=info, multiple=multiple)
+            return PollResult(status="new", info=info, multiple=multiple,
+                              count=count)
         self._current_serial = serial
-        return PollResult(status="current", info=info, multiple=multiple)
+        return PollResult(status="current", info=info, multiple=multiple,
+                          count=count)
 
     def read_now(self):
         """Manual READ THE PHONE press: re-read for display, no re-speak
@@ -2493,7 +2507,28 @@ class PhoneWatcher:
         if serial:
             self._seen_serials.add(serial)
             self._current_serial = serial
-        return PollResult(status="current", info=info, multiple=count > 1)
+        return PollResult(status="current", info=info, multiple=count > 1,
+                          count=count)
+
+
+def found_status_text(result):
+    """The 'Phone found' status line for a landed read.
+
+    v1.15 (D-2): when more than one phone is plugged in, the line
+    says so — 'first of N phones plugged in' with the real count.
+    The watcher has counted phones all along, but nothing on the
+    face ever read the flag, so a second phone on the bench went
+    unmentioned even though the ask says it is said on screen.
+    One phone keeps the exact wording the face has always used.
+    Screen only: the spoken text is untouched (speech stays once
+    per phone, and never carries this notice)."""
+    info = result.info
+    via = {"fastboot": "fastboot mode", "iphone": "USB (iPhone)"}.get(
+        info.source, "USB (adb)")
+    if result.count > 1:
+        return (f"Phone found — read by {via} — first of "
+                f"{result.count} phones plugged in")
+    return f"Phone found — read by {via}"
 
 
 # ============================================================================
@@ -2883,9 +2918,7 @@ def main():
             enforce_content_fit()
             return
         info = result.info
-        via = {"fastboot": "fastboot mode", "iphone": "USB (iPhone)"}.get(
-            info.source, "USB (adb)")
-        status.config(text=f"Phone found — read by {via}", fg=GOOD)
+        status.config(text=found_status_text(result), fg=GOOD)
         modelnum_value.config(text=info.model_number or "—")
         imei_value.config(text=group_digits(info.imei) if info.imei else "—")
         enforce_content_fit()
