@@ -1,14 +1,14 @@
 {
-  "version": "1.7",
-  "url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/pc/PrintMyTexts-PC-v1.7.pyw",
-  "sha256": "23832d695ad37a87c417357cb8cf1f494d6de0d50599529e52b65f399977e849",
-  "size": 128384,
-  "notes": "PrintMyTexts 1.7: the side buttons are now big colored buttons with symbols, like the picture. Home and Message Transcript tabs are gone - importing lands right on the messages. New: print all conversations at once, quick date choices, search, page count before printing, and save a plain text file beside the PDF. Printed pages carry no shop letterhead; messages print as bubbles.",
+  "version": "1.7.1",
+  "url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/pc/PrintMyTexts-PC-v1.7.1.pyw",
+  "sha256": "5cdfc27365401afea24f8e8c9663c18b04b7916953da9a36261318c737e66538",
+  "size": 163991,
+  "notes": "PrintMyTexts 1.7.1: the three main buttons - Read USB phone, Browse Files, View Transcript - are now solid black with bold white words, easy to see in both states. The Android robot and Apple symbols beside them are the new artwork, drawn full and clean, sitting in the same spot. Everything else is the 1.7 program, unchanged - same importing, same transcripts, same printing, same update door.",
   "android": {
-    "version": "1.7.0",
-    "url": "https://github.com/ifixrepairs/popup-blocker/releases/download/pmt-android-1.7.0/PrintMyTexts-Android-v1.7.0.apk",
-    "sha256": "ebdd45e3a6f0f56aa4fc323a2ac1c23f9caf6feb9d78dabf0c5e2d3ccdc2f2db",
-    "size": 61652806,
-    "notes": "PrintMyTexts 1.7: the home doors are now big colored buttons with symbols, like the picture, and the extra Home and Message Transcript doors are gone - importing lands right on the messages. New: print several conversations at once, quick date choices, search, page count before printing, and share a plain text file beside the PDF. Printed pages carry no shop letterhead; messages print as bubbles. Same permanent key - installs right over the top. Update with the big Check for updates button on the home screen."
+    "version": "1.7.1",
+    "url": "https://github.com/ifixrepairs/popup-blocker/releases/download/pmt-android-1.7.1/PrintMyTexts-Android-v1.7.1.apk",
+    "sha256": "5ecb6e788f886a656869de252531a6b3725a839447238d0a6f4354d2eece4cdc",
+    "size": 61734730,
+    "notes": "PrintMyTexts 1.7.1: Check for updates now sits at the bottom of Settings, where it belongs, and the big update door is off the home screen. A labeled Home button leads the phone-messages screen. Tapping a conversation opens it; only the checkbox picks it for printing. The words are honest now: chats locked inside the Messages app stay locked, and your messages open by themselves once permission is given. Same permanent key - installs right over the top."
   }
 }
