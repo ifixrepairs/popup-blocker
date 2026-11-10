@@ -7,9 +7,9 @@
    "url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/extras/dwebp.exe"
   }
  ],
- "notes": "Version 11.24. Fixed from your photos: the Background Check no longer brands factory preloads as sideloaded \u2014 an app put on the phone by Samsung's own setup agent now reads as a carrier preload, so the Xfinity TV app scores its honest 2 points and stays Still Not Sure. Six buttons that showed as unreadable black boxes are fixed: Background Check Close and Re-check, Removal History Close and Open on This Computer, the Guided Clean No button, and the Report Details Skip button. Three windows that could fail to open at all (the USB debugging guide, Guided Clean, and the Please Read window) are repaired \u2014 a missing teal colour is restored. The phone build stays at 11.9.12.",
- "sha256": "e7b29d91d88b26392f47da07a46e665b05fb444165b130a5421be447cdf80bf1",
- "size": 1083352,
- "url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/pc/AdTrapper-PC-v11.24.pyw",
- "version": "11.24"
+ "notes": "Version 11.25. The update loop is fixed. If an update ever fails and rolls back twice on a machine, AdTrapper now stops retrying it on its own: it stays on the working version and leaves the update waiting under Settings, UPDATE PROGRAM, and the next newer version still installs as usual. Only one update can run at a time now: every update try carries its own fingerprint, checked before any file is touched, so two installers can never race and damage the program the way one machine's copy was damaged today. Everything from 11.24 is unchanged: the preload fix, the readable buttons, and the repaired windows. The phone build stays at 11.9.12.",
+ "sha256": "85fbfbdf334188bc7d2479d6b2238e8a11e54e558dc9bd568ec1df7f1e65a850",
+ "size": 1105606,
+ "url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/pc/AdTrapper-PC-v11.25.pyw",
+ "version": "11.25"
 }
