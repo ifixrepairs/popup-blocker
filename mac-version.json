@@ -1,7 +1,7 @@
 {
- "notes": "Version 11.23. The AI helper is removed at the owner's direction -- AdTrapper is the scanner only again: scan, verdicts, Background Check, Guided Clean. What is new since 11.21: the leftover dormant licence-key code from the old builds is cut out, and every pop-up window (Background Check, Guided Clean, Removal History, Please Read, Report Details, Enable USB debugging) now wears the same light face as the front page so the writing is easy to read. The phone build stays at 11.9.12.",
- "sha256": "ff97fa8902e28cc87628fa36fe2880982183fb4841267a15a59bee760ba838c7",
- "size": 1090482,
- "url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/mac/AdTrapper-Mac-v11.23.py",
- "version": "11.23"
+ "notes": "Version 11.24. Fixed from your photos: the Background Check no longer brands factory preloads as sideloaded \u2014 an app put on the phone by Samsung's own setup agent now reads as a carrier preload, so the Xfinity TV app scores its honest 2 points and stays Still Not Sure. Six buttons that showed as unreadable black boxes are fixed: Background Check Close and Re-check, Removal History Close and Open on This Computer, the Guided Clean No button, and the Report Details Skip button. Three windows that could fail to open at all (the USB debugging guide, Guided Clean, and the Please Read window) are repaired \u2014 a missing teal colour is restored. The phone build stays at 11.9.12.",
+ "sha256": "8f0c35a87a6c13dfff2f5dcfb9e359dddc732b298875f7621ec07cde31df2920",
+ "size": 1091301,
+ "url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/mac/AdTrapper-Mac-v11.24.py",
+ "version": "11.24"
 }

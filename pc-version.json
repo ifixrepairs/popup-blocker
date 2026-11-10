@@ -7,9 +7,9 @@
    "url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/extras/dwebp.exe"
   }
  ],
- "notes": "Version 11.23. The AI helper is removed at the owner's direction -- AdTrapper is the scanner only again: scan, verdicts, Background Check, Guided Clean. What is new since 11.21: the leftover dormant licence-key code from the old builds is cut out, and every pop-up window (Background Check, Guided Clean, Removal History, Please Read, Report Details, Enable USB debugging) now wears the same light face as the front page so the writing is easy to read. The phone build stays at 11.9.12.",
- "sha256": "b0246f6c60c296390da2c7e6c99b7b6f12cfd8cfd94857f532796adf7ec48011",
- "size": 1082531,
- "url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/pc/AdTrapper-PC-v11.23.pyw",
- "version": "11.23"
+ "notes": "Version 11.24. Fixed from your photos: the Background Check no longer brands factory preloads as sideloaded \u2014 an app put on the phone by Samsung's own setup agent now reads as a carrier preload, so the Xfinity TV app scores its honest 2 points and stays Still Not Sure. Six buttons that showed as unreadable black boxes are fixed: Background Check Close and Re-check, Removal History Close and Open on This Computer, the Guided Clean No button, and the Report Details Skip button. Three windows that could fail to open at all (the USB debugging guide, Guided Clean, and the Please Read window) are repaired \u2014 a missing teal colour is restored. The phone build stays at 11.9.12.",
+ "sha256": "e7b29d91d88b26392f47da07a46e665b05fb444165b130a5421be447cdf80bf1",
+ "size": 1083352,
+ "url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/pc/AdTrapper-PC-v11.24.pyw",
+ "version": "11.24"
 }
