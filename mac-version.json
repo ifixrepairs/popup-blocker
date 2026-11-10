@@ -1,1 +1,7 @@
-{"notes": "Paired release \u2014 the computer build moves to 11.21 to stay in step with the phone build 11.9.12. On the computer this is the same program as 11.20 with the version raised; the fixes ride on the phone build: Background Check now catches fake cleaner, booster and security costumes on its own, a saved check result can no longer flip a factory app, and the scan results no longer show row numbers. Nothing else moves.", "sha256": "be53ee3c5dfb3366456155305317c3f0c2b70aa5d5467839bff5cf970e25d517", "size": 1092543, "url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/mac/AdTrapper-Mac-v11.21.py", "version": "11.21"}
+{
+ "notes": "Version 11.23. The AI helper is removed at the owner's direction -- AdTrapper is the scanner only again: scan, verdicts, Background Check, Guided Clean. What is new since 11.21: the leftover dormant licence-key code from the old builds is cut out, and every pop-up window (Background Check, Guided Clean, Removal History, Please Read, Report Details, Enable USB debugging) now wears the same light face as the front page so the writing is easy to read. The phone build stays at 11.9.12.",
+ "sha256": "ff97fa8902e28cc87628fa36fe2880982183fb4841267a15a59bee760ba838c7",
+ "size": 1090482,
+ "url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/mac/AdTrapper-Mac-v11.23.py",
+ "version": "11.23"
+}

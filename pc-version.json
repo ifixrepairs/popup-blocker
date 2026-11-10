@@ -1,1 +1,15 @@
-{"extras": [{"name": "dwebp.exe", "sha256": "17c1488bf84b7834e9aa908bb40afd0be2e55d57567d210e96336c56bb6ae993", "size": 512512, "url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/extras/dwebp.exe"}], "notes": "Paired release \u2014 the computer build moves to 11.21 to stay in step with the phone build 11.9.12. On the computer this is the same program as 11.20 with the version raised; the fixes ride on the phone build: Background Check now catches fake cleaner, booster and security costumes on its own, a saved check result can no longer flip a factory app, and the scan results no longer show row numbers. Nothing else moves.", "sha256": "c8e066422f41f553691c30b621fd9c17402e06beeb6f0470e4c06d8851e2e428", "size": 1084600, "url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/pc/AdTrapper-PC-v11.21-mirror.pyw", "version": "11.21"}
+{
+ "extras": [
+  {
+   "name": "dwebp.exe",
+   "sha256": "17c1488bf84b7834e9aa908bb40afd0be2e55d57567d210e96336c56bb6ae993",
+   "size": 512512,
+   "url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/extras/dwebp.exe"
+  }
+ ],
+ "notes": "Version 11.23. The AI helper is removed at the owner's direction -- AdTrapper is the scanner only again: scan, verdicts, Background Check, Guided Clean. What is new since 11.21: the leftover dormant licence-key code from the old builds is cut out, and every pop-up window (Background Check, Guided Clean, Removal History, Please Read, Report Details, Enable USB debugging) now wears the same light face as the front page so the writing is easy to read. The phone build stays at 11.9.12.",
+ "sha256": "b0246f6c60c296390da2c7e6c99b7b6f12cfd8cfd94857f532796adf7ec48011",
+ "size": 1082531,
+ "url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/pc/AdTrapper-PC-v11.23.pyw",
+ "version": "11.23"
+}
