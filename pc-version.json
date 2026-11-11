@@ -7,9 +7,9 @@
    "url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/extras/dwebp.exe"
   }
  ],
- "notes": "Version 11.25. The update loop is fixed. If an update ever fails and rolls back twice on a machine, AdTrapper now stops retrying it on its own: it stays on the working version and leaves the update waiting under Settings, UPDATE PROGRAM, and the next newer version still installs as usual. Only one update can run at a time now: every update try carries its own fingerprint, checked before any file is touched, so two installers can never race and damage the program the way one machine's copy was damaged today. Everything from 11.24 is unchanged: the preload fix, the readable buttons, and the repaired windows. The phone build stays at 11.9.12.",
- "sha256": "85fbfbdf334188bc7d2479d6b2238e8a11e54e558dc9bd568ec1df7f1e65a850",
- "size": 1105606,
- "url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/pc/AdTrapper-PC-v11.25.pyw",
- "version": "11.25"
+ "notes": "Version 11.27. The update loop is now stopped for good, even on machines updating from 11.24 or 11.25. When this version first lands, it leaves a small watcher behind: if the update ever fails and rolls back, the watcher counts it itself, and after two counted rollbacks it settles that version - no more automatic retries, the working version keeps running, and the door opens again by itself the moment a newer version is published. The 11.25 fixes are all still here: the rollback backoff, the single-updater lock with its per-try fingerprint, the preload fix, the readable buttons, and the repaired windows. The phone build stays at 11.9.12.",
+ "sha256": "abafedeac74e6892be89885f5c94b8f927a9ec2bfd5cef94679394cfcfafe085",
+ "size": 1145346,
+ "url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/pc/AdTrapper-PC-v11.27.pyw",
+ "version": "11.27"
 }
