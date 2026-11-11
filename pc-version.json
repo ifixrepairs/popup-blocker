@@ -7,9 +7,9 @@
    "url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/extras/dwebp.exe"
   }
  ],
- "notes": "Version 11.27. The update loop is now stopped for good, even on machines updating from 11.24 or 11.25. When this version first lands, it leaves a small watcher behind: if the update ever fails and rolls back, the watcher counts it itself, and after two counted rollbacks it settles that version - no more automatic retries, the working version keeps running, and the door opens again by itself the moment a newer version is published. The 11.25 fixes are all still here: the rollback backoff, the single-updater lock with its per-try fingerprint, the preload fix, the readable buttons, and the repaired windows. The phone build stays at 11.9.12.",
- "sha256": "abafedeac74e6892be89885f5c94b8f927a9ec2bfd5cef94679394cfcfafe085",
- "size": 1145346,
- "url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/pc/AdTrapper-PC-v11.27.pyw",
- "version": "11.27"
+ "notes": "Version 11.28. Three fixes to how updates are judged, from a real field case on 11.27. First, one failed update is only ever counted once now: the watcher and the running program can no longer count the same rollback twice. Second, when an update lands and runs, its record is wiped clean on the spot - a version that stumbled once and then installed fine no longer keeps a settled label hanging over it. Third, the first seconds of startup are guarded now, so a hiccup right after an update cannot close the program before it opens. The 11.27 watcher, the rollback backoff, the single-updater lock with its per-try fingerprint, the preload fix, the readable buttons, and the repaired windows are all still here. The phone build stays at 11.9.12.",
+ "sha256": "b065c01df2fc88968802a5d63f7424362fa98b21e650a3638faead7d5482c03b",
+ "size": 1149808,
+ "url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/pc/AdTrapper-PC-v11.28.pyw",
+ "version": "11.28"
 }

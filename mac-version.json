@@ -1,7 +1,7 @@
 {
- "notes": "Version 11.27. The update loop is now stopped for good, even on machines updating from 11.24 or 11.25. When this version first lands, it leaves a small watcher behind: if the update ever fails and rolls back, the watcher counts it itself, and after two counted rollbacks it settles that version - no more automatic retries, the working version keeps running, and the door opens again by itself the moment a newer version is published. The 11.25 fixes are all still here: the rollback backoff, the single-updater lock with its per-try fingerprint, the preload fix, the readable buttons, and the repaired windows. The phone build stays at 11.9.12.",
- "sha256": "d4bad0d0b262d68b1613cf97aa451d9166f69e88eff6bfd0c27f0057872378ca",
- "size": 1153295,
- "url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/mac/AdTrapper-Mac-v11.27.py",
- "version": "11.27"
+ "notes": "Version 11.28. Three fixes to how updates are judged, from a real field case on 11.27. First, one failed update is only ever counted once now: the watcher and the running program can no longer count the same rollback twice. Second, when an update lands and runs, its record is wiped clean on the spot - a version that stumbled once and then installed fine no longer keeps a settled label hanging over it. Third, the first seconds of startup are guarded now, so a hiccup right after an update cannot close the program before it opens. The 11.27 watcher, the rollback backoff, the single-updater lock with its per-try fingerprint, the preload fix, the readable buttons, and the repaired windows are all still here. The phone build stays at 11.9.12.",
+ "sha256": "52f6bd3e2edeb68a28635ae3da8e8ddea3b9c782603ef2388734ea915e295eaa",
+ "size": 1157757,
+ "url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/mac/AdTrapper-Mac-v11.28.py",
+ "version": "11.28"
 }
