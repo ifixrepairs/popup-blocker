@@ -7,9 +7,9 @@
    "url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/extras/dwebp.exe"
   }
  ],
- "notes": "Version 11.28. Three fixes to how updates are judged, from a real field case on 11.27. First, one failed update is only ever counted once now: the watcher and the running program can no longer count the same rollback twice. Second, when an update lands and runs, its record is wiped clean on the spot - a version that stumbled once and then installed fine no longer keeps a settled label hanging over it. Third, the first seconds of startup are guarded now, so a hiccup right after an update cannot close the program before it opens. The 11.27 watcher, the rollback backoff, the single-updater lock with its per-try fingerprint, the preload fix, the readable buttons, and the repaired windows are all still here. The phone build stays at 11.9.12.",
- "sha256": "b065c01df2fc88968802a5d63f7424362fa98b21e650a3638faead7d5482c03b",
- "size": 1149808,
- "url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/pc/AdTrapper-PC-v11.28.pyw",
- "version": "11.28"
+ "notes": "Version 11.30. Signing in is easier now. Tap Sign in with your AdTrapper account inside the app, your browser opens, check the short match code matches, and tap Sign this app in - no typing a code. Your website account, your plan and your devices now work the same on Windows, Mac and Android. The scan, the verdicts, Guided Clean and the threat list are unchanged. The phone build is 11.9.15.",
+ "sha256": "2547c48cb4f421316d53cc9b06000bd5be5988007edc4ccf778bcae221698424",
+ "size": 1167436,
+ "url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/pc/AdTrapper-PC-v11.30.pyw",
+ "version": "11.30"
 }

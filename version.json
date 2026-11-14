@@ -1,9 +1,9 @@
 {
-  "versionCode": 4122,
-  "versionName": "11.9.12",
-  "apkUrl": "https://drive.usercontent.google.com/download?id=1A-or9CQyoxL5Y5B8qPAK_OtVbumfLiFu&export=download&confirm=t",
-  "apkSize": 18921927,
-  "apkMd5": "59066d8950d21da78520a282aae02c6b",
-  "apkSha256": "16639a36ba7f4ad9de77505fc1dcbb8eed65c89ed2961c09482b91a3f273861e",
-  "notes": "Fixes from the full three-bot check. Background Check now catches fake cleaner, booster and security costumes on its own evidence, the way the scan already did. A saved check result can no longer flip a factory app to Remove or wipe one out \u2014 factory apps stay Ask First. The scan results list no longer shows row numbers. Same verdicts, same colors, same threat list. Tap Check for updates to get it."
+ "apkMd5": "957ea5952f2c56998027ec7e0b180f0d",
+ "apkSha256": "5dcb9388e913d7ac3ca06107c58fc78cd61a9d34a6a7cb8b26be3153cf844d19",
+ "apkSize": 18987607,
+ "apkUrl": "https://adtrapperapp.com/downloads/adtrapper-android.apk",
+ "notes": "Version 11.9.15. Signing in is easier now. Tap Sign in with your AdTrapper account inside the app, your browser opens, check the short match code matches, and tap Sign this app in - no typing a code. The scan, the verdicts, Guided Clean and the threat list are unchanged. The computer build is 11.30.",
+ "versionCode": 4125,
+ "versionName": "11.9.15"
 }

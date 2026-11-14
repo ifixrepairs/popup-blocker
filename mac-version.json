@@ -1,7 +1,7 @@
 {
- "notes": "Version 11.28. Three fixes to how updates are judged, from a real field case on 11.27. First, one failed update is only ever counted once now: the watcher and the running program can no longer count the same rollback twice. Second, when an update lands and runs, its record is wiped clean on the spot - a version that stumbled once and then installed fine no longer keeps a settled label hanging over it. Third, the first seconds of startup are guarded now, so a hiccup right after an update cannot close the program before it opens. The 11.27 watcher, the rollback backoff, the single-updater lock with its per-try fingerprint, the preload fix, the readable buttons, and the repaired windows are all still here. The phone build stays at 11.9.12.",
- "sha256": "52f6bd3e2edeb68a28635ae3da8e8ddea3b9c782603ef2388734ea915e295eaa",
- "size": 1157757,
- "url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/mac/AdTrapper-Mac-v11.28.py",
- "version": "11.28"
+ "notes": "Version 11.30. Signing in is easier now. Tap Sign in with your AdTrapper account inside the app, your browser opens, check the short match code matches, and tap Sign this app in - no typing a code. Your website account, your plan and your devices now work the same on Windows, Mac and Android. The scan, the verdicts, Guided Clean and the threat list are unchanged. The phone build is 11.9.15.",
+ "sha256": "20e298f02aac5067965454b538a21495bf7b48b14ce9832b96e6ab6031fe4d53",
+ "size": 1175385,
+ "url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/mac/AdTrapper-Mac-v11.30.py",
+ "version": "11.30"
 }
