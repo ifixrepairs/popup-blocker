@@ -1,14 +1,1 @@
-{
-  "version": "1.7.1",
-  "url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/pc/PrintMyTexts-PC-v1.7.1.pyw",
-  "sha256": "5cdfc27365401afea24f8e8c9663c18b04b7916953da9a36261318c737e66538",
-  "size": 163991,
-  "notes": "PrintMyTexts 1.7.1: the three main buttons - Read USB phone, Browse Files, View Transcript - are now solid black with bold white words, easy to see in both states. The Android robot and Apple symbols beside them are the new artwork, drawn full and clean, sitting in the same spot. Everything else is the 1.7 program, unchanged - same importing, same transcripts, same printing, same update door.",
-  "android": {
-    "version": "1.7.1",
-    "url": "https://github.com/ifixrepairs/popup-blocker/releases/download/pmt-android-1.7.1/PrintMyTexts-Android-v1.7.1.apk",
-    "sha256": "5ecb6e788f886a656869de252531a6b3725a839447238d0a6f4354d2eece4cdc",
-    "size": 61734730,
-    "notes": "PrintMyTexts 1.7.1: Check for updates now sits at the bottom of Settings, where it belongs, and the big update door is off the home screen. A labeled Home button leads the phone-messages screen. Tapping a conversation opens it; only the checkbox picks it for printing. The words are honest now: chats locked inside the Messages app stay locked, and your messages open by themselves once permission is given. Same permanent key - installs right over the top."
-  }
-}
+{"android":{"notes":"PrintMyTexts 1.7.2: the Back button is fixed - system Back from a phone-messages session now returns to the doors screen. A session with no texts now says so honestly instead of failing silently, and chats locked inside the Messages app still stay locked, in plain words. Same permanent key - installs right over the top.","sha256":"d8b05291cdacc7cd119130a29d44237777c12c5bf9afeb2f623d9979ddb7c9e3","size":61751110,"url":"https://github.com/ifixrepairs/popup-blocker/releases/download/pmt-android-1.7.2/PrintMyTexts-Android-v1.7.2.apk","version":"1.7.2"},"notes":"PrintMyTexts 1.7.2: the transcript reader handles real carrier dumps far more safely now - a text pasted inside another text can no longer swallow real messages or invent ones that were never sent. This is the paired 1.7.2 fix set: the phone-messages session carries the same Back fix as the phone build, returning to the doors screen the way it should. Everything else is the 1.7.1 program, unchanged - same importing, same transcripts, same printing, same update door.","sha256":"5fc1d77ec7465a7fd681b9a39701bba83d826e29a7fff37866242b148d43b843","size":197439,"url":"https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/pc/PrintMyTexts-PC-v1.7.2.pyw","version":"1.7.2"}
