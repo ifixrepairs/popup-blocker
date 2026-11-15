@@ -1,15 +1,1 @@
-{
- "extras": [
-  {
-   "name": "dwebp.exe",
-   "sha256": "17c1488bf84b7834e9aa908bb40afd0be2e55d57567d210e96336c56bb6ae993",
-   "size": 512512,
-   "url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/extras/dwebp.exe"
-  }
- ],
- "notes": "Version 11.30. Signing in is easier now. Tap Sign in with your AdTrapper account inside the app, your browser opens, check the short match code matches, and tap Sign this app in - no typing a code. Your website account, your plan and your devices now work the same on Windows, Mac and Android. The scan, the verdicts, Guided Clean and the threat list are unchanged. The phone build is 11.9.15.",
- "sha256": "2547c48cb4f421316d53cc9b06000bd5be5988007edc4ccf778bcae221698424",
- "size": 1167436,
- "url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/pc/AdTrapper-PC-v11.30.pyw",
- "version": "11.30"
-}
+{"extras":[{"name":"dwebp.exe","sha256":"17c1488bf84b7834e9aa908bb40afd0be2e55d57567d210e96336c56bb6ae993","size":512512,"url":"https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/extras/dwebp.exe"}],"notes":"Version 11.31. Two new doors on the results screen. Explain to customer builds a plain-words card of what was found and what was done, ready to print or save for the customer. Background check all runs a deep check on every Ask First app in one tap - it only checks, it never removes anything. Signing in, the scan, the verdicts, Guided Clean and the threat list are unchanged. The phone build is 11.9.16.","sha256":"fd99b7c248a753a994d81906885a4af2615dc345cfe6fac3e9a95146ea35633b","size":1191442,"url":"https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/pc/AdTrapper-PC-v11.31.pyw","version":"11.31"}

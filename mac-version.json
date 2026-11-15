@@ -1,7 +1,1 @@
-{
- "notes": "Version 11.30. Signing in is easier now. Tap Sign in with your AdTrapper account inside the app, your browser opens, check the short match code matches, and tap Sign this app in - no typing a code. Your website account, your plan and your devices now work the same on Windows, Mac and Android. The scan, the verdicts, Guided Clean and the threat list are unchanged. The phone build is 11.9.15.",
- "sha256": "20e298f02aac5067965454b538a21495bf7b48b14ce9832b96e6ab6031fe4d53",
- "size": 1175385,
- "url": "https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/mac/AdTrapper-Mac-v11.30.py",
- "version": "11.30"
-}
+{"notes":"Version 11.31. Two new doors on the results screen. Explain to customer builds a plain-words card of what was found and what was done, ready to print or save for the customer. Background check all runs a deep check on every Ask First app in one tap - it only checks, it never removes anything. Signing in, the scan, the verdicts, Guided Clean and the threat list are unchanged. The phone build is 11.9.16.","sha256":"50f4fbddb03703253d5b8c0b41b454fa10fd70be6940629848b388df0202aef2","size":1199391,"url":"https://raw.githubusercontent.com/ifixrepairs/popup-blocker/main/mac/AdTrapper-Mac-v11.31.py","version":"11.31"}

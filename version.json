@@ -1,9 +1,1 @@
-{
- "apkMd5": "957ea5952f2c56998027ec7e0b180f0d",
- "apkSha256": "5dcb9388e913d7ac3ca06107c58fc78cd61a9d34a6a7cb8b26be3153cf844d19",
- "apkSize": 18987607,
- "apkUrl": "https://adtrapperapp.com/downloads/adtrapper-android.apk",
- "notes": "Version 11.9.15. Signing in is easier now. Tap Sign in with your AdTrapper account inside the app, your browser opens, check the short match code matches, and tap Sign this app in - no typing a code. The scan, the verdicts, Guided Clean and the threat list are unchanged. The computer build is 11.30.",
- "versionCode": 4125,
- "versionName": "11.9.15"
-}
+{"apkMd5":"70b6daad0e19494ca133d20ae03988f9","apkSha256":"6a2d728523f20dea76eb3219301cfb5cbce278e5cff6e338d31954e66b05a993","apkSize":19053267,"apkUrl":"https://adtrapperapp.com/downloads/adtrapper-android.apk","notes":"Version 11.9.16. Two new doors on the results screen. Explain to customer shows a plain-words card of what was found and what was done, ready to share with the customer. Background check all runs a deep check on every Ask First app in one tap - it only checks, it never removes anything. Signing in, the scan, the verdicts and Guided Clean are unchanged. The computer build is 11.31.","versionCode":4126,"versionName":"11.9.16"}
