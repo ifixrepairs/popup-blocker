@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-07",
+  "updated": "2026-11-16",
   "packages": [
     "abdelrahman.wifianalyzerpro",
     "ai.junk.cleaner",
@@ -178,6 +178,7 @@
     "com.deepcleanelit.dcle",
     "com.dl.guard.lock",
     "com.dmstudio.weather",
+    "com.dna.solitaireapp",
     "com.document.pdf.viewer",
     "com.doly.callscreen.colorphone",
     "com.doodle.mind.games.memory.match.learning.kids",
