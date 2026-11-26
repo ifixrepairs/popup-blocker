@@ -16,12 +16,12 @@ the main window opens:
   with the shop's contact words — never a crash, never a silent
   lockout.
 
-CUSTOMER SHOP BUILD: this copy of the module has NO owner bypass.
-The bypass code that exists in the shop's own build was removed
-from this file entirely -- there is no file a customer can place
-next to the app, and no phrase they can type, that skips the
-license check. Every start on a customer machine goes through
-the key, the relay, and the grace rules below.
+Owner bypass (the shop's own machines): if a file named ``owner.key``
+sits next to the app and holds a shop-chosen phrase of 12+ characters,
+the app runs as an owner machine and never asks for a customer key.
+The customer download never includes that file and the phrase never
+leaves the shop, so customers have no way to reach this door. Every
+bypass start is written to the local license log next to the app.
 
 Website sign-in (11.29): beside the key door, this module also
 carries the adtrapperapp.com account door (portal SPEC section
@@ -76,6 +76,7 @@ in the log.
 """
 import hashlib
 import json
+import subprocess
 import os
 import platform
 import ssl
@@ -89,6 +90,7 @@ DEFAULT_GRACE_DAYS = 7
 # place the portal is named; local testing points it elsewhere
 # through ADTRAPPER_PORTAL_URL.
 DEFAULT_PORTAL_URL = "https://adtrapperapp.com"
+BYPASS_FILE = "owner.key"
 STATE_FILE = "adtrapper-license.json"
 LOG_FILE = "adtrapper-license.log"
 
@@ -100,6 +102,155 @@ def machine_id() -> str:
         uuid.getnode(), platform.node(), platform.system(),
         platform.machine())
     return hashlib.sha256(raw.encode("utf-8")).hexdigest()
+
+
+# -- Simple Activation device identity (2026-11-22) --------------
+# The stable device ID: a hardware UUID that does NOT depend on
+# the network or the computer's name, so moving house or renaming
+# the machine can never mint a "new computer" (the 2026-11-22
+# lockout this design replaces). Only the SHA-256 hash leaves
+# the machine; the raw UUID never does.
+DEVICE_ID_PREFIX = "adtrapper-device-v1|"
+GENERIC_DEVICE_NAME = "This computer"
+
+_PLACEHOLDER_UUIDS = {
+    "",
+    "00000000-0000-0000-0000-000000000000",
+    "ffffffff-ffff-ffff-ffff-ffffffffffff",
+    "03000200-0400-0500-0006-000700080009",
+}
+_PLACEHOLDER_TEXT = {
+    "not applicable", "none", "to be filled by o.e.m.",
+    "default string", "n/a", "unknown",
+}
+
+
+def _hash_device_id(raw):
+    return hashlib.sha256(
+        (DEVICE_ID_PREFIX + str(raw).strip()).encode("utf-8")
+    ).hexdigest()
+
+
+def _is_placeholder_uuid(value):
+    """True when a reported UUID is a known placeholder / junk
+    value rather than a real hardware identity."""
+    text = str(value or "").strip().strip("{}").strip()
+    low = text.lower()
+    if low in _PLACEHOLDER_TEXT:
+        return True
+    norm = low.replace("-", "")
+    if not norm or set(norm) == {"0"} or set(norm) == {"f"}:
+        return True
+    return low in _PLACEHOLDER_UUIDS
+
+
+def _mac_hardware_uuid():
+    """IOPlatformUUID via ioreg. "" on any failure."""
+    try:
+        out = subprocess.run(
+            ["ioreg", "-rd1", "-c", "IOPlatformExpertDevice"],
+            capture_output=True, text=True, timeout=5).stdout
+        for line in out.splitlines():
+            if "IOPlatformUUID" in line and "=" in line:
+                return line.split("=", 1)[1].strip().strip('"')
+    except Exception:
+        pass
+    return ""
+
+
+def _windows_smbios_uuid():
+    """SMBIOS UUID via CIM. "" on any failure."""
+    try:
+        out = subprocess.run(
+            ["powershell", "-NoProfile", "-NonInteractive",
+             "-Command",
+             "(Get-CimInstance Win32_ComputerSystemProduct).UUID"],
+            capture_output=True, text=True, timeout=8).stdout
+        return out.strip()
+    except Exception:
+        return ""
+
+
+def _windows_machine_guid():
+    """HKLM MachineGuid — the Windows fallback identity."""
+    try:
+        import winreg
+        with winreg.OpenKey(
+                winreg.HKEY_LOCAL_MACHINE,
+                r"SOFTWARE\Microsoft\Cryptography") as key:
+            value, _kind = winreg.QueryValueEx(key, "MachineGuid")
+            return str(value or "").strip()
+    except Exception:
+        return ""
+
+
+class DeviceIdentificationError(Exception):
+    """No acceptable stable hardware identifier could be read
+    on this computer. device_id() raises this instead of ever
+    falling back to the legacy machine_id(): that recipe hashes
+    the network address and the computer's network name, so it
+    changes when the machine moves networks or is renamed --
+    the 2026-11-22 lockout. The legacy value may travel ONLY
+    in its own migration field (legacy_id); it must never pose
+    as the stable ID. Callers turn this error into the plain
+    device_unidentified refusal (SIGNIN_REASONS)."""
+
+
+def device_id() -> str:
+    """The Simple Activation stable device ID for this computer.
+
+    Mac: IOPlatformUUID. Windows: SMBIOS UUID, rejecting known
+    placeholders in favour of the registry MachineGuid. Only
+    sha256("adtrapper-device-v1|" + raw) is returned — the raw
+    value never leaves the machine. If no hardware source is
+    usable, DeviceIdentificationError is raised: the stable ID
+    NEVER falls back to the legacy network fingerprint, and
+    never to an invented, changing value."""
+    try:
+        system = platform.system()
+        raw = ""
+        if system == "Darwin":
+            raw = _mac_hardware_uuid()
+        elif system == "Windows":
+            candidate = _windows_smbios_uuid()
+            if candidate and not _is_placeholder_uuid(candidate):
+                raw = candidate
+            else:
+                raw = _windows_machine_guid()
+        if raw and not _is_placeholder_uuid(raw):
+            return _hash_device_id(raw)
+    except DeviceIdentificationError:
+        raise
+    except Exception:
+        pass
+    raise DeviceIdentificationError(
+        "no usable hardware UUID could be read on this computer")
+
+
+def device_name() -> str:
+    """The friendly OS computer name, for seat lists. Never
+    raises; a lookup failure yields the generic name — a name
+    problem must never block a sign-in."""
+    try:
+        name = ""
+        system = platform.system()
+        if system == "Darwin":
+            try:
+                name = subprocess.run(
+                    ["scutil", "--get", "ComputerName"],
+                    capture_output=True, text=True,
+                    timeout=5).stdout.strip()
+            except Exception:
+                name = ""
+        elif system == "Windows":
+            name = (os.environ.get("COMPUTERNAME")
+                    or platform.node() or "")
+        if not name:
+            name = platform.node() or ""
+        name = str(name).strip()[:80]
+        return name or GENERIC_DEVICE_NAME
+    except Exception:
+        return GENERIC_DEVICE_NAME
 
 
 def _iso_to_epoch(text):
@@ -150,6 +301,12 @@ SIGNIN_REASONS = {
                         "already in use. Sign a computer "
                         "out on your account page, or "
                         "contact us:",
+    "device_removed": "This computer was taken off this "
+                      "account by the shop, so it cannot "
+                      "sign back in by itself. If this is "
+                      "your computer, or you bought it from "
+                      "us, contact us and we can put it "
+                      "back:",
     "invalid_token": "This computer was signed out of the "
                      "account. Sign in again below, or "
                      "contact us:",
@@ -163,6 +320,17 @@ SIGNIN_REASONS = {
     "request_expired": "That sign-in try ran out of "
                        "time. Tap Sign in and try "
                        "again.",
+    "device_unidentified": "We could not identify this "
+                           "computer - its built-in ID "
+                           "could not be read, so it cannot "
+                           "be signed in. Restart the "
+                           "computer and try again; if it "
+                           "keeps happening, contact us:",
+    "account_only": "This app signs in with an account, "
+                    "not a key. Sign in below with your "
+                    "AdTrapper account. No account yet? "
+                    "Contact us and we will set one up "
+                    "from your key:",
 }
 
 
@@ -360,22 +528,27 @@ def _user_state_path(app_dir):
 
 class LicenseManager:
     def __init__(self, relay_url, state_path, transport=None, clock=None,
-                 portal_url=None):
+                 bypass_path=None, portal_url=None):
         self.relay_url = relay_url.rstrip("/")
         self.state_path = state_path
         self.transport = transport or _default_transport
         self.clock = clock or time.time
+        self.bypass_path = bypass_path
         self.portal_url = (portal_url or DEFAULT_PORTAL_URL).rstrip("/")
         self.machine = machine_id()
+        self._device = None
+        self._device_name = None
 
     @classmethod
     def from_env(cls, app_dir):
         relay = os.environ.get("ADTRAPPER_LICENSE_URL", DEFAULT_RELAY_URL)
         state = os.environ.get(
             "ADTRAPPER_LICENSE_STATE") or _user_state_path(app_dir)
+        bypass = os.path.join(app_dir, BYPASS_FILE)
         portal = os.environ.get("ADTRAPPER_PORTAL_URL",
                                 DEFAULT_PORTAL_URL)
-        return cls(relay, state, portal_url=portal)
+        return cls(relay, state, bypass_path=bypass,
+                   portal_url=portal)
 
     # -- local state --------------------------------------------------
     def _load(self):
@@ -423,17 +596,52 @@ class LicenseManager:
         except Exception:
             pass
 
+    # -- owner bypass ---------------------------------------------------
+    def owner_bypass(self) -> bool:
+        if not self.bypass_path:
+            return False
+        try:
+            with open(self.bypass_path, "r", encoding="utf-8") as fh:
+                phrase = fh.read().strip()
+            return len(phrase) >= 12
+        except Exception:
+            return False
+
     # -- relay calls ------------------------------------------------------
     def _call(self, door, key):
         return self.transport(
             self.relay_url + door,
             {"key": key, "machine_id": self.machine})
 
+    # -- Simple Activation identity --------------------------------
+    def _stable_device_id(self):
+        if self._device is None:
+            self._device = device_id()
+        return self._device
+
+    def _friendly_name(self):
+        if self._device_name is None:
+            self._device_name = device_name()
+        return self._device_name
+
+    def _identity_fields(self):
+        """The Simple Activation payload fields every portal
+        door carries: the new stable ID, the friendly name,
+        and (transition only) the legacy machine_id value."""
+        return {"device_id": self._stable_device_id(),
+                "device_name": self._friendly_name(),
+                "legacy_id": self.machine}
+
     def activate(self, key):
         """First-run activation. Returns the relay's answer dict."""
         answer = self._call("/api/activate", key)
         if answer.get("ok"):
-            self._save({
+            # MERGE, never replace (Simple Activation fix): the
+            # state file also carries the account door's
+            # portal_* fields, and replacing the whole dict
+            # here used to wipe a remembered sign-in.
+            state = self._load()
+            state.update({
                 "key": key,
                 "machine_id": self.machine,
                 "last_ok": self.clock(),
@@ -441,6 +649,7 @@ class LicenseManager:
                 "grace_days": answer.get("grace_days", DEFAULT_GRACE_DAYS),
                 "shop_contact": answer.get("shop_contact", ""),
             })
+            self._save(state)
             self._log("activated; expires %s" % answer.get("expires_at"))
         return answer
 
@@ -482,9 +691,13 @@ class LicenseManager:
         the remembered app token (POST /api/authorize). Returns
         the portal's answer dict; on success the token and the
         account's shop/plan truth are stored locally."""
-        answer = self._portal_call("/api/authorize", {
-            "code": (code or "").strip(),
-            "machine_id": self.machine})
+        payload = {"code": (code or "").strip(),
+                   "machine_id": self.machine}
+        try:
+            payload.update(self._identity_fields())
+        except DeviceIdentificationError:
+            return {"ok": False, "reason": "device_unidentified"}
+        answer = self._portal_call("/api/authorize", payload)
         if answer.get("ok") and answer.get("token"):
             self._save_portal(answer, answer.get("entitlement"))
             ent = answer.get("entitlement") or {}
@@ -503,9 +716,13 @@ class LicenseManager:
         /api/authorize. On success the token and the
         account truth are stored exactly as the code
         door stores them. A refusal stores nothing."""
-        answer = self._portal_call("/api/handoff", {
-            "token": (raw or "").strip(),
-            "machine_id": self.machine})
+        payload = {"token": (raw or "").strip(),
+                   "machine_id": self.machine}
+        try:
+            payload.update(self._identity_fields())
+        except DeviceIdentificationError:
+            return {"ok": False, "reason": "device_unidentified"}
+        answer = self._portal_call("/api/handoff", payload)
         if answer.get("ok") and answer.get("token"):
             self._save_portal(answer, answer.get("entitlement"))
             ent = answer.get("entitlement") or {}
@@ -523,8 +740,12 @@ class LicenseManager:
         the app opens in the browser. The request id is
         a thirty-minute credential: the CALLER keeps it in
         memory only -- it is never stored or logged."""
-        return self._portal_call("/api/authorize/start", {
-            "machine_id": self.machine})
+        payload = {"machine_id": self.machine}
+        try:
+            payload.update(self._identity_fields())
+        except DeviceIdentificationError:
+            return {"ok": False, "reason": "device_unidentified"}
+        return self._portal_call("/api/authorize/start", payload)
 
     def authorize_poll(self, request_id):
         """Poll one app-first sign-in request
@@ -537,9 +758,13 @@ class LicenseManager:
               them;
           {"ok": False, ...} -- refused or expired;
           nothing is stored."""
-        answer = self._portal_call("/api/authorize/poll", {
-            "request_id": (request_id or "").strip(),
-            "machine_id": self.machine})
+        payload = {"request_id": (request_id or "").strip(),
+                   "machine_id": self.machine}
+        try:
+            payload.update(self._identity_fields())
+        except DeviceIdentificationError:
+            return {"ok": False, "reason": "device_unidentified"}
+        answer = self._portal_call("/api/authorize/poll", payload)
         if answer.get("ok") and answer.get("token"):
             self._save_portal(answer, answer.get("entitlement"))
             ent = answer.get("entitlement") or {}
@@ -561,9 +786,13 @@ class LicenseManager:
         cancelled still expires on its own. Answers
         the portal's one generic ok; stores nothing,
         logs nothing with the request id in it."""
-        return self._portal_call("/api/authorize/cancel", {
-            "request_id": (request_id or "").strip(),
-            "machine_id": self.machine})
+        payload = {"request_id": (request_id or "").strip(),
+                   "machine_id": self.machine}
+        try:
+            payload.update(self._identity_fields())
+        except DeviceIdentificationError:
+            return {"ok": False, "reason": "device_unidentified"}
+        return self._portal_call("/api/authorize/cancel", payload)
 
     def portal_token_hint(self):
         """The remembered sign-in token's value, or "".
@@ -584,8 +813,9 @@ class LicenseManager:
         token = state.get("portal_token")
         if not token:
             return {"ok": False, "reason": "no_token"}
-        answer = self._portal_call("/api/app-check", {
-            "token": token, "machine_id": self.machine})
+        payload = {"token": token, "machine_id": self.machine}
+        payload.update(self._identity_fields())
+        answer = self._portal_call("/api/app-check", payload)
         if answer.get("ok"):
             self._save_portal(answer, answer.get("entitlement"))
         return answer
@@ -627,6 +857,14 @@ class LicenseManager:
         """The token door's verdict, in startup_status words."""
         try:
             answer = self.app_check()
+        except DeviceIdentificationError:
+            # This computer's stable ID could not be read at
+            # all: not an outage and not grace -- a plain
+            # identification refusal (fix loop 11.34.3, F2).
+            return {"state": "needs_renewal",
+                    "reason": "device_unidentified",
+                    "door": "account",
+                    "shop_contact": state.get("shop_contact", "")}
         except Exception:
             return self._portal_offline_status(state)
         if answer.get("ok"):
@@ -651,6 +889,7 @@ class LicenseManager:
                 "plan_words": entitlement_words(ent) if ent else "",
                 "days_left": ent.get("days_left"),
                 "expires_at": ent.get("expires_at"),
+                "seats": answer.get("seats") or [],
                 "shop_contact": state.get("shop_contact", "")}
 
     def background_check(self):
@@ -660,6 +899,8 @@ class LicenseManager:
         at the next start; a scan already running is never
         interrupted (the license door's rule since day one).
         Only a bad verdict is logged, so the log stays thin."""
+        if self.owner_bypass():
+            return {"state": "owner"}
         state = self._load()
         if state.get("portal_token"):
             status = self._portal_status(state)
@@ -676,6 +917,7 @@ class LicenseManager:
         """The one question the app asks before it opens.
 
         Returns {"state": ...} where state is one of:
+          owner          - shop machine, bypass file present
           licensed       - relay says the key is good
           grace          - relay unreachable, still inside the
                            offline grace from the last good check
@@ -686,6 +928,9 @@ class LicenseManager:
           needs_renewal  - relay says paused/expired/not ours, or
                            the grace ran out with no contact
         """
+        if self.owner_bypass():
+            self._log("owner bypass start")
+            return {"state": "owner"}
         state = self._load()
         if state.get("portal_token"):
             return self._portal_status(state)
